@@ -1,0 +1,36 @@
+.info-carousel-container{
+    width: 50%;
+    height:30vh;
+    border:solid 1px #E5E7EB;
+    border-radius: 0.5rem;
+    position: relative;
+    top: -2rem;
+    background-color: white;
+}
+.card{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.slide-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.card-content{
+    display: flex;
+    align-items: center;
+    padding: 0 1rem 0 1rem ;
+
+}
+
+.slide-text{
+    width: 70%;
+    display: flex;
+    margin-left: 1rem;
+    justify-content: center;
+}
+
+.slide-img{
+    border-radius: 1rem;
+}

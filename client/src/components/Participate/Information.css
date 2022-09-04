@@ -1,0 +1,28 @@
+.info-container{
+    height:100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.info-bg{
+    background-color: #EDE9FE;
+    height:50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.left-info{
+    width: 40%;
+}
+.info-title{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4C1D95
+}
+.info-text{
+    color:#111827
+}
