@@ -5,41 +5,42 @@
     align-items: center;
     /* border-top: solid 1px #D1D5DB; */
     border-top: 1px solid;
-  border-image: linear-gradient(to right, transparent 25%,#000 50%, transparent 75%) 100% 1;
-  margin-bottom: 3rem;
-  
+    border-image: linear-gradient(to right, transparent 25%,#000 50%, transparent 75%) 100% 1;
+    padding-bottom: 3rem;
+    background-color: #d90000;
 }
 
 .q-container{
     width: 50%;
     border-top: 1px solid;
     border-image: linear-gradient(to right, transparent 10%,#D1D5DB 50%, transparent 90%) 100% 1;
-    
+    background-color: white;
+    margin-bottom: 0.5rem;
     /* border-image: linear-gradient(to right, transparent 25%,#000 50%, transparent 75%) 100% 1; */
 }
 
 .qandA-title{
     font-size: 1.8rem;
-    color:#4C1D95;
+    color:white;
     font-weight: 700;
-    
+    margin-top: 2rem;
 }
-.qandA-subtitle{
-    font-size: 1.2rem;
-    color:#7C3AED;
-    font-weight: 500;
-    font-family: "Oswald";
 
-}
 .question-box{
     height:2rem;
     font-size: 1.2rem;
     display: flex;
     justify-content: space-between;
 }
+.question-title{
+    color:#d90000;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
 .answer{
     display: none;
+    color: #7A7A7A;
 }
 .show{
-    display: flex;
+    display: block;
 }

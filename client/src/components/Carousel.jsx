@@ -5,7 +5,7 @@ const Carousel = () =>{
     var slideIndex = 0;
     function carousel() {
         var i;
-        var x = document.getElementsByClassName("mySlides");
+        var x = document.getElementsByClassName("myCarSlides");
         console.log(x)
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "none";
@@ -22,7 +22,7 @@ const Carousel = () =>{
           
         //   function showDivs(n) {
         //     var i;
-        //     var x = document.getElementsByClassName("mySlides");
+        //     var x = document.getElementsByClassName("myCarSlides");
         //     if (n > x.length) {slideIndex = 1}
         //     if (n < 1) {slideIndex = x.length} ;
         //     for (i = 0; i < x.length; i++) {
@@ -45,7 +45,7 @@ const Carousel = () =>{
             {
                 infocards.map(card=>{
                     return <>
-                        <div className="mySlides">
+                        <div className="myCarSlides">
                             <div className="slide-container" >
                                 <div className=" card">{card.title}</div>
                                 <div className="card-content">

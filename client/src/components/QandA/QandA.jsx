@@ -12,20 +12,19 @@ const QandA = () =>{
 
     return(
         <div className="qandA-container" >
-            <div className="qandA-title">Enterate más</div>
-            <div className="qandA-subtitle" >TODO LO QUE TENES QUE SABER SOBRE MEJOR OBERÁ</div>
+            <div className="qandA-title">Más sobre cómo participar en el MejorOberá</div>
             {
                 questionsAndAnswers.map((q,index)=>
                 {
                     return <>
                         <div className="q-container" >
                             <div className="question-box" onClick={()=>toggleShow(index)} >
-                                <div>
+                                <div className="question-title" >
                                     {q.question}
                                 </div>
                                 <span class="material-symbols-outlined">{!showQuestions[index] ? "expand_more":"expand_less"}</span>
                             </div>
-                            <div className={showQuestions[index]?"answer show":"answer"} >{q.answer}</div>
+                            <div className={showQuestions[index]?"answer show":"answer"} dangerouslySetInnerHTML={{__html: q.answer}} ></div>
                         </div>
                     </>
                 })
