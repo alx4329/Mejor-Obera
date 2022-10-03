@@ -1,0 +1,18 @@
+.LogosBanner{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.banners-logo-mo{
+    width: 13%;
+    z-index: 3;
+    object-fit: contain;
+    position: relative;
+}
+.cr{
+    width: 15%;
+}

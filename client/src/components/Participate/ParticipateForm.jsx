@@ -1,5 +1,5 @@
 import React from "react";
-import logo from '../../assets/images/logo.jfif'
+import logo from '../../assets/images/mejorobera.png'
 import './ParticipateForm.css'
 
 const ParticipateForm = () =>{
