@@ -3,7 +3,7 @@
     width: 60%;
     height: 60vh;;
     margin-left: 20%;
-    
+    /* overflow-x: hidden; */
 }
 .h-s1-container{
     top: -65vh;
@@ -39,12 +39,14 @@
 }
 
 .hom1-s1-ad-title{
+    font-family: 'Nunito';
     font-weight: 700;
     color:#d90000;
     font-size:1.5rem ;
 }
 
 .hom1-s1-ad-button{
+    font-family: 'Nunito';
     font-size: 1rem;
     background-color: #d90000;
     color: white;
@@ -55,6 +57,7 @@
     width: 30%;
     text-align: center;
     font-weight: 700;
+    border:0
 }
 .hom1-s1-ad-button:hover{
     background-color: #fcb900;

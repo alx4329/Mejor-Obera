@@ -4,6 +4,7 @@ import infoBackground from '../../assets/images/home/mejorobera_banner-que-es.jp
 import './Information.css'
 import logoMo from '../../assets/images/mejorobera.png'
 import Slider from "../Slider";
+import JoinForm from "../Modals/JoinForm";
 
 
 
@@ -28,7 +29,8 @@ const Information = () =>{
                 <div className="right-info" >
                     <img className="info-logo" src={logoMo} alt="Logo Mejor Oberá"/>
                     <p className="" >MejorOberá es una marca registrada de la CRIPCO, para poder usarla en tus comunicaciones tenés que participar oficialmente como Patrocinador Comercial.</p>
-                    <a className="hom1-info-ad-button" href="https://docs.google.com/forms/d/e/1FAIpQLSe4UXY8i4E1_pmOl6leoCRh0o5JJstYSqzmgMCmvBMNrBRUzA/viewform" >ADHERIR MI COMERCIO</a>
+                    <JoinForm text="ADHERIR MI COMERCIO" classNameStyle="hom1-info-ad-button" />
+                    
                 </div>
             </div>
             

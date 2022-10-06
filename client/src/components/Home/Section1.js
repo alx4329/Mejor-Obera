@@ -8,6 +8,7 @@ import slide4 from '../../assets/images/home/slider1/mejorobera_beneficos-exclus
 import slide5 from '../../assets/images/home/slider1/mejorobera_beneficos-exclusivos-horizontal-29.jpg'
 import slide6 from '../../assets/images/home/slider1/mejorobera_beneficos-exclusivos-horizontal-30.jpg'
 import Slider from '../Slider'
+import JoinForm from '../Modals/JoinForm'
 const Section1 = () =>{
     const slides = [
         slide1,
@@ -24,13 +25,12 @@ const Section1 = () =>{
                 <p className='home-section1-headline'>POTENCIÁ TUS VENTAS Y FIDELIZÁ CLIENTES</p>
                 <div className='home-section1-adheri' >
                     <p className='hom1-s1-ad-title'>ADHERÍ TU COMERCIO</p>
-                    <a href='https://docs.google.com/forms/d/e/1FAIpQLSe4UXY8i4E1_pmOl6leoCRh0o5JJstYSqzmgMCmvBMNrBRUzA/viewform' className='hom1-s1-ad-button'>COMPLETAR FORMULARIO</a>
+                    <JoinForm text={"COMPLETAR FORMULARIO"} classNameStyle='hom1-s1-ad-button' />
                     <p className='hom1-s1-ad-detalle'>Conocé en detalle la forma de participar y los beneficios exlusivos <a className='hom1-s1-ad-link' href="https://docs.google.com/document/d/1PuvUZhcTa0mnl9GQKXaM7vL1HOlMUp0zuoF7kJxwUiE/edit" >aquí</a> </p>
                 </div>
                 <p className='home-s1-mid-title' >¡Nueva edición! Más beneficios para tu comercio.</p>
                 <div className='h-s1-slider' >
                     <Slider slides={slides} />
-
                 </div>
                 <p className='home-s1-descrption' >*Las imágenes son ilustrativas, ver <a href='https://docs.google.com/document/d/19yP0lIg4s-63pWYXGDGi1rl35Vd_T9eW0QSko4j3TcE/edit' >Condiciones de Adhesión MejorOberá 2022</a></p>
             </div>
