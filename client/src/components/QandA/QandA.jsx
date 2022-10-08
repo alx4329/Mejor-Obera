@@ -22,7 +22,7 @@ const QandA = () =>{
                                 <div className="question-title" >
                                     {q.question}
                                 </div>
-                                <span class="material-symbols-outlined">{!showQuestions[index] ? "expand_more":"expand_less"}</span>
+                                <span class="material-symbols-outlined qandA-arrow">{!showQuestions[index] ? "expand_more":"expand_less"}</span>
                             </div>
                             <div className={showQuestions[index]?"answer show":"answer"} dangerouslySetInnerHTML={{__html: q.answer}} ></div>
                         </div>

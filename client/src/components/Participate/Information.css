@@ -1,5 +1,5 @@
 .info-container{
-    height:100vh;
+    height:45rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -7,7 +7,7 @@
     align-items: center;
 }
 .info-bg{    
-    height:80vh;
+    height:36rem;
     width: 80%;
     display: flex;
     justify-content: space-between;
@@ -16,7 +16,7 @@
     
 }
 .info-background{
-    height:100vh;
+    height:45rem;
     width: 100%;
     object-fit: cover;
 }

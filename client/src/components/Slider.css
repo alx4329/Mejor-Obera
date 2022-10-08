@@ -1,0 +1,12 @@
+.img-slide{
+    border-radius: 1rem;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+.swiper-button-next { display: none; }
+.swiper-button-prev { display: none; }
+
+.swiper-pagination-bullet{
+    display: none;
+}

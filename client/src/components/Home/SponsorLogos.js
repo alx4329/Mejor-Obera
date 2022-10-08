@@ -1,6 +1,6 @@
 import React from 'react'
 import './SponsorLogos.css'
-import logoCrip from '../../assets/images/mejorobera_logo-iniciativa.png'
+import logoCrip from '../../assets/images/home/sponsors/mejorobera-logo-cripco-2.png'
 import logoMuni from '../../assets/images/home/sponsors/mejorobera_logo-apoyo-gris-19.jpg'
 import logoGob from '../../assets/images/home/sponsors/mejorobera_logo-apoyo-gris-20.jpg'
 import logoCem from '../../assets/images/home/sponsors/mejorobera_logo-apoyo-gris-21.jpg'

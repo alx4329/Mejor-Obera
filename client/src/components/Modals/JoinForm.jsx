@@ -30,29 +30,28 @@ const JoinForm = ({text,classNameStyle}) => {
     useOutsideAlerter(wrapperRef)
     return(
         <>
-                <button 
-                    className={classNameStyle}
-                    onClick={handleShow}   
-                >{text}</button>
-                <div className={show?'joinform-background':'joinform-background not-visible'} >
-                    <div ref={wrapperRef} className={show?'joinform-container':'joinform-container not-visible'} >
-                        <span onClick={handleShow} class="material-symbols-outlined">
-                            close
-                        </span>
-                        <iframe 
-                            src="https://docs.google.com/forms/d/e/1FAIpQLSe4UXY8i4E1_pmOl6leoCRh0o5JJstYSqzmgMCmvBMNrBRUzA/viewform?embedded=true" 
-                            title='Formulario de adhesion Mejor Obera 2022'
-                            width="700" 
-                            height="520" 
-                            frameborder="0" 
-                            marginheight="0" 
-                            marginwidth="0"
-                            className= "modal-join-form"
-                            >
-                            Cargando…
-                        </iframe>
-                    </div>
+            <button 
+                className={classNameStyle}
+                onClick={handleShow}   
+            >{text}</button>
+            <div className={show?'joinform-background':'joinform-background not-visible'} >
+                <div ref={wrapperRef} className={show?'joinform-container':'joinform-container not-visible'} >
+                    <span onClick={handleShow} class="material-symbols-outlined">
+                        close
+                    </span>
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSe4UXY8i4E1_pmOl6leoCRh0o5JJstYSqzmgMCmvBMNrBRUzA/viewform?embedded=true" 
+                        title='Formulario de adhesion Mejor Obera 2022'
+                        
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        className= "modal-join-form"
+                        >
+                        Cargando…
+                    </iframe>
                 </div>
+            </div>
 
         </>
     )

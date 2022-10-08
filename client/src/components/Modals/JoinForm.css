@@ -27,3 +27,32 @@
 .not-visible{
     display: none;
 }
+
+.modal-join-form{
+    width: 60rem;
+    height: 40rem;
+}
+
+@media (max-width:1000px) {
+    .modal-join-form{
+        width: 80rem;
+        height: 60rem;
+        
+    }
+    
+}   
+@media (max-width:700px) {
+    .modal-join-form{
+        height: 70rem;
+        
+    }
+    
+}   
+@media (max-width:565px) {
+    .modal-join-form{
+        height: 90rem;
+        
+    }
+    
+}   
+

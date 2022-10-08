@@ -3,7 +3,8 @@
     
 }
 .home-banners{
-    height: 80vh;
+  width: 100%;
+  aspect-ratio:2.5;
 }
 
 .mySlides{
@@ -11,7 +12,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 80vh;
+    aspect-ratio:2.5;
+    /* height: 80vh; */
     object-fit:cover;
     -webkit-animation: fade 10s infinite;
     animation: fade 10s infinite;
@@ -58,3 +60,10 @@
       opacity: 1;
     }
   }
+
+
+  @media (min-height:1200px) {
+    /* .home-banners{
+        height: 600px;
+    } */
+}

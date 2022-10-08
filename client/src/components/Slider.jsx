@@ -1,6 +1,6 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import './Slider.css'
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -21,6 +21,7 @@ const Slider = ({slides}) =>{
             navigation={true}
             modules={[Autoplay, Pagination, Navigation]}
             className="mySwiper"
+            
                 >
                 {
                     slides.map((s,i)=>{
