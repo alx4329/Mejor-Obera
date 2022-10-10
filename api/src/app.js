@@ -24,7 +24,7 @@ app.use((req, res, next) => {
     next();
   });
 /*Routes*/
-app.use("/", nonauthRoutes);
+
 
 app.use(function (_, res) {
     res.json({ status: "inexistent" });
