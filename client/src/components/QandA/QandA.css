@@ -36,10 +36,14 @@
     color:#d90000;
     font-size: 1.2rem;
     font-weight: 700;
+    width: 90%;
+    margin-left: 5%;
 }
 .answer{
     display: none;
     color: #7A7A7A;
+    width: 90%;
+    margin-left: 5%;
 }
 .show{
     display: block;

@@ -19,7 +19,7 @@ const Information = () =>{
                     <div className="info-title">¿Qué es Mejor Oberá?</div>
                     <div className="info-text">
                         <p>
-                            MejorOberá es una acción comercial organizada por la Cámara de Comercio, Industria y Producción de Oberá (CRIPCO), que busca posicionar a la misma como nodo turístico, productivo e industrial, a la vez que impulsar el comercio local.
+                            MejorOberá es una acción comercial organizada por la Cámara de Comercio, Industria y Producción de Oberá (CRIPCO), que busca posicionar a la ciudad como nodo turístico, productivo e industrial, a la vez que impulsar el comercio local.
                         </p>
                         <p>
                             En este evento participan importantes comercios y empresas obereñas que promocionan sus productos y servicios, con ofertas o descuentos especiales durante cuatro días.

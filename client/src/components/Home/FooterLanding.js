@@ -23,7 +23,7 @@ const FooterLanding = () =>{
         <div className='footer-landing' >
             {
                 items.map(item=>{
-                    return <a className='foot-land-item' href={item.uri} >{item.text}</a>
+                    return <a className='foot-land-item' href={item.uri}target='_blank' >{item.text}</a>
                 })
             }
         </div>

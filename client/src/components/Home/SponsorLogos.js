@@ -39,7 +39,9 @@ const SponsorLogos = () =>{
             {
                 logos.map(item=>{
                     return (
-                        <img className='sponsor-logo-container' src={item.logo} alt="logo" / >
+                        <a href={item.uri} target='_blank' >
+                            <img className='sponsor-logo-container' src={item.logo} alt="logo" / >
+                        </a>
                     )
                 })
             }
