@@ -39,6 +39,11 @@ const comerceSchema = new Schema({
     otro_url:{
         type: String
     },
-})
+    userId:{
+        type:String
+    }
+},
+{timestamps:true}
+)
 
 module.exports = mongoose.model("Comerce", comerceSchema)
