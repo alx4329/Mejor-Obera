@@ -19,14 +19,14 @@ html{
 /* desktop laptops */
 @media (max-width:1400px) {
   html{
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
 /* iPads(landscape) */
 @media (max-width:1024px) {
   html{
-    font-size: 10px;
+    font-size: 14px;
   }
 }
 
@@ -36,21 +36,26 @@ html{
     font-size: 14px;
   }
 }
-/* Big smartphones (portrait) (ie: Galaxy 3 has 360)*/
-@media (max-width : 640px) {
-  /* html{
-    font-size: 7px;
-  } */
-
+@media (max-width:540px) {
+  html{
+    font-size: 12px;
+  }
 }
+@media (max-width:375px) {
+  html{
+    font-size: 10px;
+  }
+}
+/* Big smartphones (portrait) (ie: Galaxy 3 has 360)*/
+
 
 /* Smartphones (portrait) (ie: Galaxy 1) */
-@media only screen and (max-width : 321px) {
+/* @media only screen and (max-width : 321px) {
   html{
     font-size: 6px;
   }
   
-}
+} */
 /* @media (max-width:650px) {
   html{
     font-size: 7px;

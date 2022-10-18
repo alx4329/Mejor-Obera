@@ -48,6 +48,11 @@
         margin-left: 10%;
     }
     .Section4-content{
-        top:-10%
+        top:-5%
+    }
+}
+@media (max-width:375px) {
+    .Section4-content{
+        top:-5%
     }
 }
