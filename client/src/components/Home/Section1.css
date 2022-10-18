@@ -120,11 +120,9 @@
         height: 120vh;
         width: 90%;
         margin-left: 5%;
-        border: solid 1px yellow;
     }
     .h-s1-container{
         top:15rem;
-        border: solid 1px green;
     }
     .home-s1-descrption{
         font-size: 1rem;
