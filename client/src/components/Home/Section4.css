@@ -41,3 +41,13 @@
 .img-slide{
     border-radius: 2rem;
 }
+@media (max-width:720px) {
+    .section4-container{
+        height: 50vh;
+        width: 80%;
+        margin-left: 10%;
+    }
+    .Section4-content{
+        top:-10%
+    }
+}

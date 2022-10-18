@@ -14,35 +14,44 @@ code {
 }
 html{
   overflow: auto;
-  font-size: 16px;
+  font-size: 100%;
 }
-
+/* desktop laptops */
 @media (max-width:1400px) {
   html{
     font-size: 14px;
   }
 }
-@media (max-width:1200px) {
-  html{
-    font-size: 12px;
-  }
-}
-@media (max-width:1000px) {
+
+/* iPads(landscape) */
+@media (max-width:1024px) {
   html{
     font-size: 10px;
   }
 }
-@media (max-width:850px) {
+
+/* smartphones (landscape) */
+@media (max-width:768px) {
   html{
-    font-size: 9px;
+    font-size: 14px;
   }
 }
-@media (max-width:700px) {
-  html{
-    font-size: 8px;
-  }
+/* Big smartphones (portrait) (ie: Galaxy 3 has 360)*/
+@media (max-width : 640px) {
+  /* html{
+    font-size: 7px;
+  } */
+
 }
-@media (max-width:650px) {
+
+/* Smartphones (portrait) (ie: Galaxy 1) */
+@media only screen and (max-width : 321px) {
+  html{
+    font-size: 6px;
+  }
+  
+}
+/* @media (max-width:650px) {
   html{
     font-size: 7px;
   }
@@ -61,4 +70,4 @@ html{
   html{
     font-size: 4px;
   }
-}
+} */

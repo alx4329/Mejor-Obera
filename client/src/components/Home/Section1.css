@@ -1,7 +1,7 @@
 .home-section1{
     width: 60%;
     position: relative;
-    height: 28rem;;
+    height: 28rem;
     margin-left: 20%;
     /* overflow-x: hidden; */
     
@@ -115,12 +115,21 @@
 .swiper-pagination-bullet{
     display: none;
 }
-
+@media(max-width:720px){
+    .home-section1{
+        height: 120vh;
+        width: 90%;
+        margin-left: 5%;
+    }
+    .h-s1-container{
+        top:15rem
+    }
+    .home-s1-descrption{
+        font-size: 1rem;
+    }
+}
 
 @media (max-width:360px) {
-    .home-section1{
-        height: 35rem;
-    }
     .h-s1-container{
         top: -35rem;
         

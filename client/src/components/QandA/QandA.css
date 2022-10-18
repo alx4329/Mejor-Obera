@@ -53,3 +53,8 @@
     font-size: 1.8rem;
 }
 
+@media(max-width:720px){
+    .q-container{
+        width: 80%;
+    }
+}

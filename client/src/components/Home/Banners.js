@@ -12,8 +12,8 @@ const Banners = () =>{
                     <img className="banners-logo-mo" src={LogoMO} alt="logo mejor obera" />
                     <img className="banners-logo-mo cr" src={LogoMOinciativa} alt="logo mejor obera" />
                 </div>
-                <img className='mySlides' id='pic2' src={banner1} alt='banner1' />
-                <img className='mySlides' id='pic1' src={banner2} alt='banner1' />
+                <img className='mySlides' id='pic2' src={banner1} loading="lazy" alt='banner1' />
+                <img className='mySlides' id='pic1' src={banner2} loading="lazy" alt='banner1' />
         </div>
     )
 }

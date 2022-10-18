@@ -60,7 +60,16 @@
       opacity: 1;
     }
   }
-
+  @media (max-width:720px) {
+    .home-banners{
+      width: 100%;
+      height: 75%;
+      aspect-ratio:2.5;
+    }
+    .mySlides{
+      height: 75%;
+    }
+  }
 
   @media (min-height:1200px) {
     /* .home-banners{
