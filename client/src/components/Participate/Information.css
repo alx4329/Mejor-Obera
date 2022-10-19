@@ -79,14 +79,14 @@
 }
 @media(max-width:720px){
     .info-container{
-        height: 90vh;
+        height: 100vh;
     }
     .info-background{
-        height: 90vh;
+        height: 100vh;
     }
     .info-bg{
         flex-direction: column;
-        height: 90%;
+        height: 100%;
         justify-content: space-around;
     }
     .left-info{
