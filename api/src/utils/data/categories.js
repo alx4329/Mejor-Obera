@@ -1,0 +1,25 @@
+const categories = [
+    {nombre:"Electro, Tecno, Informática, Celulares"},
+    {nombre:"Gastronomía, Heladería, Bar, Restaurante"},
+    {nombre:"Frutería, verdulería, mercado, minimercado"},
+    {nombre:"Muebles, Hogar y Deco, Bazar"},
+    {nombre:"Ferretería, Herramientas y materiales"},
+    {nombre:"Indumentaria, Calzado, Lencería, Boutique"},
+    {nombre:"Bebés y Niños"},
+    {nombre:"Veterninaria, Agroveterinaria, Animales y Mascotas"},
+    {nombre:"Regalería, Juguetería, Librería"},
+    {nombre:"Mercería, Cotillón, Repostería"},
+    {nombre:"Farmacia, Perfumería, Limpieza"},
+    {nombre:"Cosmética y Belleza"},
+    {nombre:"Deportes y Fiteness"},
+    {nombre:"Diseño, Imprentas y Gráficas"},
+    {nombre:"Joyería y Relojería"},
+    {nombre:"Óptica"},
+    {nombre:"Hotelería y Turismo"},
+    {nombre:"Automotriz, Motocicletas, Bicicletas"},
+    {nombre:"Agroindustria y Maquinarias"},
+    {nombre:"Servicios, Oficinas y Agencias"},
+    {nombre:"Varios"},
+]
+
+module.exports = categories
