@@ -1,4 +1,4 @@
-const Commerce = require("../schemas/Comerce")
+const Commerce = require("../schemas/Commerce")
 const getCommerces = async()=>{
     return new Promise(async(resolve,reject)=>{
         try {
@@ -51,10 +51,10 @@ const createCommerce = async(commerce,userId) => {
 
     })
 }
-const getCommercesByCategory = async(category) =>{
+const getCommercesByCategory = async(categoria) =>{
     return new Promise(async(resolve,reject)=>{
         try{
-            const commerces = await Commerce.find({category})
+            const commerces = await Commerce.find({categorias:categoria})
             resolve(commerces)
         }catch(e){
             reject(e.message||e)

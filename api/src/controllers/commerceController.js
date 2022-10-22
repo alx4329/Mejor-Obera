@@ -18,6 +18,15 @@ const getCommerce = async (req,res) => {
         res.json({status:error,error:e.message||e})
     }
 }
+const getCommerceByCuit = async (req,res) => {
+    try{
+        const {cuitComercio} = req.body
+        const commerce = await commerceService.findCommerceByCuit(cuitComercio)
+        return res.json({status:"ok", data:commerce})
+    }catch(e){
+        res.json({status:error,error:e.message||e})
+    }
+}
 const getCommercesByCategory = async (req,res) => {
     try{
         const {category} = req.body
@@ -42,5 +51,6 @@ module.exports = {
     createCommerce,
     getCommerce,
     getCommerces,
-    getCommercesByCategory
+    getCommercesByCategory,
+    getCommerceByCuit
 }

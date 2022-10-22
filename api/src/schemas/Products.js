@@ -19,8 +19,9 @@ const productSchema = new Schema({
     comerciante:{
         type: {
             id:{type:String},
-            nomebre:{type:String},
-        }
+            nombre:{type:String},
+        },
+    cuitComercio:{type:String},
     }
 })
 

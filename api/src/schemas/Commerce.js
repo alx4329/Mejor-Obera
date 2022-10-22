@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const comerceSchema = new Schema({
+const commerceSchema = new Schema({
     nombre:{
         type:String,
         required:true
@@ -46,4 +46,4 @@ const comerceSchema = new Schema({
 {timestamps:true}
 )
 
-module.exports = mongoose.model("Comerce", comerceSchema)
+module.exports = mongoose.model("Commerce", commerceSchema)

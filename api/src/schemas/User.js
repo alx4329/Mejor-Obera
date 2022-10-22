@@ -18,6 +18,9 @@ const userSchema = new Schema({
     whatsapp:{
         type: String, 
     },
+    cuitComercio:{
+        type: String, 
+    }
 })
 
 module.exports = mongoose.model("User", userSchema)
