@@ -12,7 +12,7 @@ const getConnectionString = async () => {
   const dbName = process.env.DB_NAME;
   //   TODO: alternative of setting up env variables through env.yaml or .env
 //   connectionString = `mongodb+srv://${dbUser}:${dbPassword}@${dbHost}/${dbName}?retryWrites=true&w=majority`;
-connectionString= `mongodb+srv://${dbUser}:${dbPassword}@cluster0.bcqln3e.mongodb.net/?retryWrites=true&w=majority`
+connectionString= `mongodb+srv://${dbUser}:${dbPassword}@cluster0.jiqpry6.mongodb.net/?retryWrites=true&w=majority`
   return connectionString;
 };
 

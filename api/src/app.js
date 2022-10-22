@@ -11,10 +11,10 @@ app.use(express.json()); //Used to parse JSON bodies
 app.use(cors());
 
 /*Routers used*/
-const nonauthRoutes = require("./routes/nonauthRoutes");
-// const authenticatedRoutes = require("./routes/authRoutes");
-// const apiRoutes = require("./routes/apiRoutes");
-
+const userRoutes = require('./routes/userRoutes')
+const commerceRoutes = require('./routes/commerceRoutes')
+/* middleware */
+const authMiddleware = require('./middleware/auth')
 app.use(morgan("dev"));
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*'); // update to match the domain you will make the request from
@@ -24,10 +24,11 @@ app.use((req, res, next) => {
     next();
   });
 /*Routes*/
-
+app.use('/user',userRoutes)
+app.use('/commerce',authMiddleware,commerceRoutes)
 
 app.use(function (_, res) {
-    res.json({ status: "inexistent" });
+    res.json({ status: "inexistent route" });
   });
 
   module.exports =app

@@ -14,7 +14,7 @@ const productSchema = new Schema({
         type:String,
     },
     descuento:{
-        type:String,
+        type:Number,
     },
     comerciante:{
         type: {
