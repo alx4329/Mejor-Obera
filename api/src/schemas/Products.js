@@ -20,6 +20,7 @@ const productSchema = new Schema({
         type: String,
     },
     cuitComercio:{type:String},
+    image:{type:String}
 })
 
 module.exports = mongoose.model("Product", productSchema)

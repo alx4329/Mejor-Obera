@@ -30,8 +30,9 @@ const getProductsByCategory = async (req,res) => {
 
 const createProduct = async (req,res) => {
     try{
-        const product = req.body
-        const newProduct = productService.createProduct(product)
+        const {nombre,categoria,precio,descuento,idComercio,cuitComercio} = req.body
+        const image = req?.files?.image;
+        const newProduct = productService.createProduct(nombre,categoria,precio,descuento,idComercio,cuitComercio,image)
         if(newProduct) res.json({status:"ok"})
     }catch(e){
         res.status(500).json({status:"ok",error:"No se pudo crear el comercio"})

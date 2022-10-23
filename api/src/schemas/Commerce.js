@@ -44,7 +44,11 @@ const commerceSchema = new Schema({
     },
     userId:{
         type:String
-    }
+    },
+    imageUrl:{
+        type:String
+    },
+
 },
 {timestamps:true}
 )
