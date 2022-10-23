@@ -2,10 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    nombre: {
-        type: String, 
-        required: true
-    },
+    
     telefono:{
         type: String, 
     },
@@ -13,9 +10,6 @@ const userSchema = new Schema({
         type: String, 
     },
     contraseña:{
-        type: String, 
-    },
-    whatsapp:{
         type: String, 
     },
     cuitComercio:{

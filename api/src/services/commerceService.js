@@ -23,29 +23,31 @@ const findCommerceByCuit = async(CUIT) =>{
     return new Promise(async(resolve,reject)=>{
         try{
             const found = await Commerce.find({CUIT})
-            if(found.length ===0) reject("not found")
+            if(found.length ===0) resolve("not found")
             return found
         }catch(e){
             reject(e.message||e)
         }
     })
 }
-const createCommerce = async(commerce,userId) => {
+const createCommerce = async(commerce) => {
     return new Promise (async(resolve,reject)=>{
         try{
-            const alreadyExists = await findCommerceByCuit(commerce.CUIT)
-            if (alreadyExists ==="not found") {
-                const newCommerce = new Commerce({...commerce, userId})
+            // const alreadyExists = await findCommerceByCuit(commerce.CUIT)
+            // if (alreadyExists ==="not found") {
+                const newCommerce = new Commerce(commerce)
                 newCommerce.save(function(err,obj){
                     if(err) {
-                        console.log(err)
+                        console.log("ERROR CREATING",err)
                         reject(err)
                     } else{
+                        console.log("Comercio agregado"+obj.nombre)
                         resolve("Comercio agregado"+obj.nombre)
                     }
                 })
-            }
+            // }else console.log("alreadyExists",alreadyExists)
         }catch(e){
+            console.log("ERROR CREATING COMMERCE",e.message||e)
             reject(e.message||e)
         }
 

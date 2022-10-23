@@ -9,14 +9,14 @@ const findUserByEmail =async  (email)=>{
     }
 }
 
-const createUser  =async (email,contraseña,nombre,cuitComercio) => {
+const createUser  =async (email,contraseña,telefono,cuitComercio) => {
     return new Promise(async(resolve,reject)=>{
         try{   
             const encryptedPassword = await bcrypt.hash(contraseña,10)
             const mongoUser = new User({
                 email,
                 contraseña: encryptedPassword,
-                nombre,
+                telefono,
                 cuitComercio
             })
             mongoUser.save(function (error, user) {

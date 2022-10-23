@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 const dbConfig = require("../config/db.config");
 const categoriesLoader = require("../utils/loaders/categoriesLoaders");
+const usersLoader = require("../utils/loaders/usersLoader");
 
 const HOSTS_RX =
   /(mongodb(?:\+srv|)):\/\/(?: (?:[^:]*) (?: : ([^@]*) )? @ )?([^/?]*)(?:\/|)(.*)/;
@@ -40,6 +41,7 @@ const dbMongoose = () => {
         .then(() => {
           console.log("Connection Database successful");
           categoriesLoader()
+          usersLoader()
           resolve("Connection Database successful");
         })
         .catch((err) => {

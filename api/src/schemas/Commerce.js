@@ -30,6 +30,9 @@ const commerceSchema = new Schema({
     email:{
         type: String
     },
+    web_url:{
+        type: String
+    },
     fb_url:{
         type: String
     },
