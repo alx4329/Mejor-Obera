@@ -1,4 +1,11 @@
+const sharp = require('sharp')
+const cloudinary = require("cloudinary").v2;
 const Commerce = require("../schemas/Commerce")
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 const getCommerces = async()=>{
     return new Promise(async(resolve,reject)=>{
         try {
@@ -19,12 +26,34 @@ const findCommerceById = async(id) =>{
         }
     })
 }
+const findCommerceByUser = async(userId )=>{
+    return new Promise(async(resolve,reject)=>{
+        try{
+            const found = await Commerce.findOne({userId})
+            resolve(found)
+        }catch(e){
+            reject(e)
+        }
+    })
+
+}
+const getUserCommerce = async(userId) =>{
+    return new Promise(async(resolve,reject)=>{
+        try{
+            const found = await Commerce.find({userId})
+            resolve(found)
+        }catch(e){
+            reject(e)
+        }
+    })
+}
 const findCommerceByCuit = async(CUIT) =>{
     return new Promise(async(resolve,reject)=>{
         try{
             const found = await Commerce.find({CUIT})
+            console.log(found)
             if(found.length ===0) resolve("not found")
-            return found
+            resolve( found)
         }catch(e){
             reject(e.message||e)
         }
@@ -63,10 +92,58 @@ const getCommercesByCategory = async(categoria) =>{
         }
     })
 }
+const editCommerce = async(id,update) => {
+    return new Promise(async(resolve,reject)=>{
+        try{
+            const updatedCommerce = await Commerce.findOneAndUpdate({_id:id},update)
+            resolve(updatedCommerce)
+        }catch(e){
+            reject(e.message||e)
+        }
+    })
+}
+const imageLocation = async (image) => {
+    //resize image and return location
+    if(image.size>2000000){
+        const newLocation = `${image.tempFilePath}NEW`
+        const resized = await sharp(image.tempFilePath)
+            .resize(200,200)
+            .toFormat("jpeg", { mozjpeg: true })
+            .toFile(newLocation)
+        return newLocation
+    } else return image.tempFilePath
+}
+const uploadLogo = async(commerceId,image) =>{
+    return new Promise(async(resolve,reject)=>{
+        try{
+            const location = await imageLocation(image)
+            await cloudinary.uploader.upload(
+                location,
+                {folder:"profilePictures"},
+                async (err,result) => {
+                    if (err) {
+                        reject("Error occurred while uploading file");
+                    } else {
+                        //get saved image url
+                        imageUrl = result.secure_url;
+                        const editPicture = await editCommerce(commerceId,{imageUrl})
+                        resolve(imageUrl)
+                        }
+                    }
+            )
+        }catch(e){
+            reject(e.message||e)
+        }
+    })
+}
 module.exports = {
     createCommerce,
     findCommerceById,
     findCommerceByCuit,
+    getUserCommerce,
     getCommerces,
-    getCommercesByCategory
+    getCommercesByCategory,
+    editCommerce,
+    uploadLogo,
+    findCommerceByUser
 }

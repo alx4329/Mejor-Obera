@@ -3,13 +3,13 @@ var cors = require("cors");
 require("dotenv").config();
 const multer = require("multer");
 const morgan = require("morgan");
-
+const fileUpload = require('express-fileupload')
 const app = express();
 
 app.use(express.urlencoded({ extended: true })); //Parse URL-encoded bodies
 app.use(express.json()); //Used to parse JSON bodies
 app.use(cors());
-
+app.use(fileUpload({useTempFiles:true}))
 /*Routers used*/
 const userRoutes = require('./routes/userRoutes')
 const commerceRoutes = require('./routes/commerceRoutes')

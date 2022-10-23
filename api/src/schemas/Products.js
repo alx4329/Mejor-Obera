@@ -16,13 +16,10 @@ const productSchema = new Schema({
     descuento:{
         type:Number,
     },
-    comerciante:{
-        type: {
-            id:{type:String},
-            nombre:{type:String},
-        },
+    idComercio:{
+        type: String,
+    },
     cuitComercio:{type:String},
-    }
 })
 
 module.exports = mongoose.model("Product", productSchema)

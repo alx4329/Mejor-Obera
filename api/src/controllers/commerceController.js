@@ -15,7 +15,7 @@ const getCommerce = async (req,res) => {
         const commerce = await commerceService.findCommerceById(id)
         return res.json({status:"ok", data:commerce})
     }catch(e){
-        res.json({status:error,error:e.message||e})
+        res.json({status:"error",error:e.message||e})
     }
 }
 const getCommerceByCuit = async (req,res) => {
@@ -40,17 +40,30 @@ const getCommercesByCategory = async (req,res) => {
 const createCommerce = async (req,res) => {
     try{
         const commerce = req.body
-        const newCommerce = commerceService.createCommerce(commerce)
+        const newCommerce = await commerceService.createCommerce(commerce)
         if(newCommerce) res.json({status:"ok"})
     }catch(e){
         res.status(500).json({status:"ok",error:"No se pudo crear el comercio"})
     }
 }
-
+const imageUpload = async(req,res)=>{
+    try{
+        const {userId} = req
+        const image = req?.files?.image;
+        if(!image) return res.json(400).json({status:"error", error:"must send an image"})
+        const commerce = await commerceService.findCommerceByUser(userId)
+        if(!commerce) return res.json(404).json({status:"error", error:"Comercio no encontrado"})
+        const uploaded = await commerceService.uploadLogo(commerce._id,image)
+        res.json({status:"ok", message:"image added successfully",data:{imageUrl:uploaded}})
+    }catch(e){
+        res.status(500).json({status:"error", error:e.message||e});
+    }
+}
 module.exports = {
     createCommerce,
     getCommerce,
     getCommerces,
     getCommercesByCategory,
-    getCommerceByCuit
+    getCommerceByCuit,
+    imageUpload
 }

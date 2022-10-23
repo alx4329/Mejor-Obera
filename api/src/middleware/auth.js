@@ -8,8 +8,8 @@ function authenticateToken(req, res, next) {
 
   jwt.verify(token, process.env.TOKEN_SECRET, (err, user) => {
     if (err) return res.status(403).json({status:"error",error:"No autorizado"})
-    req.userEmail = user
-
+    console.log(user)
+    req.userId = user.id
     next()
   })
 }
