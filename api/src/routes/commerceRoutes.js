@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const commerceController = require('../controllers/commerceController')
 
-router.get('/',commerceController.getCommerce)
+router.get('/:id',commerceController.getCommerce)
 router.get('/all',commerceController.getCommerces)
 router.get('/cuit',commerceController.getCommerceByCuit)
 router.get('/category',commerceController.getCommercesByCategory)
