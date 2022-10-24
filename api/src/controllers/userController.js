@@ -1,4 +1,5 @@
 const userService = require('../services/userService')
+const commerceService = require('../services/commerceService')
 const bcrypt = require('bcrypt')
 const jwt = require("jsonwebtoken")
 const registerUser = async (req, res) => {
@@ -21,12 +22,14 @@ const loginUser = async(req,res) => {
         if(!user) return res.status(401).json({status:"error",error:"Usuario no encontrado"})
         const isValid = await bcrypt.compare(contraseña, user.contraseña);
         if(!isValid)  return res.status(401).json({status:"error",error:"Alguno de los datos no es válido"})
+        const commerce = await commerceService.findCommerceByUser(user.id)
         const token = jwt.sign({id:user._id},process.env.TOKEN_SECRET,{expiresIn:'86400s'})
         return res.json({
             token,
             user:{
                 id:user._id,
-                email:user.email
+                email:user.email,
+                commerceId:commerce._id
             }
         })
     }catch(e){
