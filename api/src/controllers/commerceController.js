@@ -11,7 +11,7 @@ const getCommerces = async (req,res) => {
 }
 const getCommerce = async (req,res) => {
     try{
-        const {id} = req.body
+        const {id} = req.params
         const commerce = await commerceService.findCommerceById(id)
         return res.json({status:"ok", data:commerce})
     }catch(e){
