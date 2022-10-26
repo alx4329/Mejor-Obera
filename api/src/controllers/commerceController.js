@@ -1,10 +1,27 @@
 const commerceService = require("../services/commerceService")
-
+const categoryService  = require('../services/categoryService')
 
 const getCommerces = async (req,res) => {
     try{
         const commerces = await commerceService.getCommerces()
         return res.json({status:"ok", data:commerces})
+    }catch(e){
+        res.json({status:error,error:e.message||e})
+    }
+}
+const getAllByCategory = async (req,res) => {
+    try{
+        const commerces = await commerceService.getCommerces()
+        const categories = await categoryService.getCategories()
+        const categorizedCommerces = categories.map(cat=>{
+            const filtered = commerces.filter(commerce=>commerce.categorias.includes(cat.nombre))
+            const obj={
+                category:cat,
+                commerces: filtered
+            }
+            return obj
+        })
+        return res.json({status:"ok", data:categorizedCommerces})
     }catch(e){
         res.json({status:error,error:e.message||e})
     }
@@ -80,5 +97,6 @@ module.exports = {
     getCommercesByCategory,
     getCommerceByCuit,
     imageUpload,
-    editCommerce
+    editCommerce,
+    getAllByCategory
 }

@@ -14,6 +14,7 @@ app.use(fileUpload({useTempFiles:true}))
 const userRoutes = require('./routes/userRoutes')
 const commerceRoutes = require('./routes/commerceRoutes')
 const categorieRoutes = require('./routes/categoryRoutes')
+const noAuthCommerceRoutes = require('./routes/noAuthCommerce')
 /* middleware */
 const authMiddleware = require('./middleware/auth')
 app.use(morgan("dev"));
@@ -25,10 +26,13 @@ app.use((req, res, next) => {
     next();
   });
 /*Routes*/
-app.use('/users',userRoutes)
 app.use('/commerce',authMiddleware,commerceRoutes)
 app.use('/categories',authMiddleware,categorieRoutes)
+/* no auth routes */
+app.use('/users',userRoutes)
+app.use('/no/commerce',noAuthCommerceRoutes)
 
+app.use
 app.use(function (_, res) {
     res.status(404).json({ status: "inexistent route" });
   });
