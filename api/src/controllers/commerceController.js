@@ -48,16 +48,30 @@ const createCommerce = async (req,res) => {
 }
 const imageUpload = async(req,res)=>{
     try{
-        const {userId} = req
+        console.log(req)
+        const {commerceId} = req.body
         const image = req?.files?.image;
-        if(!image) return res.json(400).json({status:"error", error:"must send an image"})
-        const commerce = await commerceService.findCommerceByUser(userId)
+        console.log(image)
+        if(!image) return res.status(400).json({status:"error", error:"must send an image"})
+        console.log("aca pasé")
+        const commerce = await commerceService.findCommerceById(commerceId)
         if(!commerce) return res.json(404).json({status:"error", error:"Comercio no encontrado"})
         const uploaded = await commerceService.uploadLogo(commerce._id,image)
         res.json({status:"ok", message:"image added successfully",data:{imageUrl:uploaded}})
     }catch(e){
+        console.log("error===",e)
         res.status(500).json({status:"error", error:e.message||e});
     }
+}
+const editCommerce = async(req,res)=>{
+    try{
+        const {id} = req.params
+        const {update} = req.body
+        const updated = await commerceService.editCommerce(id,update)
+        res.json({status:"ok"})
+    }catch(e){
+        res.status(500).json({status:"error",error:e.message||e})
+    }   
 }
 module.exports = {
     createCommerce,
@@ -65,5 +79,6 @@ module.exports = {
     getCommerces,
     getCommercesByCategory,
     getCommerceByCuit,
-    imageUpload
+    imageUpload,
+    editCommerce
 }

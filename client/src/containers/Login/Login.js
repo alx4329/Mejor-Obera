@@ -28,7 +28,9 @@ export default function Login() {
     React.useEffect(()=>{
         if(user){
             dispatch(cleanError())
-            navigate(`/comercio/${user.id}`);
+            navigate(`/private/comercio/${user.commerceId}`);
+            // setTimeout(()=>{
+            // },2000)
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[user])

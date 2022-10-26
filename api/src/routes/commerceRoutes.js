@@ -8,6 +8,7 @@ router.get('/cuit',commerceController.getCommerceByCuit)
 router.get('/category',commerceController.getCommercesByCategory)
 router.post('/create',commerceController.createCommerce)
 router.post('/uploadImage',commerceController.imageUpload)
+router.post('/edit/:id',commerceController.editCommerce)
 
 router.get('/prueba',(req,res)=>{
     res.json({status:"ok"})

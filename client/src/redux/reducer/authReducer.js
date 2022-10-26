@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import axios from 'axios';
-
+// import axios from 'axios';
+import axios from '../../api/index'
 // let user =  "";
 // let token =  "";
 let user = localStorage.getItem("currentMejorOberaUser")
@@ -33,7 +33,8 @@ export const login = createAsyncThunk(
                 email,
                 contraseña
             }
-            const user = await axios.post(`/users/login`,data,headers)
+            const user = await axios.requestData('post',`/users/login`,data)
+            // const user = await axios.post(`/users/login`,data,headers)
             console.log(user)
             localStorage.setItem("currentMejorOberaUser", JSON.stringify(user.data.user))
             localStorage.setItem("token", JSON.stringify(user.data.token))
