@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../../components/Footer/Footer'
 import AddedCommerces from '../../components/Home/AddedCommerces'
 import SponsorLogos from '../../components/Landing/SponsorLogos'
 import Navbar from '../../components/Navbar/Navbar'
@@ -20,6 +21,7 @@ const Home = () =>{
                 <div className='red-background' ></div>
             </div>
             <SponsorLogos/>
+            <Footer/>
         </>
     )
 }

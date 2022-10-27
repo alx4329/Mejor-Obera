@@ -1,11 +1,10 @@
 import React from 'react'
 import LogoMO from '../../assets/images/mejorobera.png'
-import fb_logo from '../../assets/images/nav/facebook.svg'
-import ig_logo from '../../assets/images/nav/instagram.svg'
 import NavSponsors from './NavSponsors'
 import Search from './Search'
 import './Navbar.css'
 import FilterBar from './FilterBar'
+import SocialNetwork from '../SocialNetwork'
 const Navbar = () =>{
 
     return(
@@ -21,15 +20,7 @@ const Navbar = () =>{
                         DE NOVIEMBRE</p>
                     </div>
                     <Search/>
-                    <p>Seguinos</p>
-                    <div className='nav-redes'>
-                        <a href="https://www.facebook.com/profile.php?id=100086669450468" target='_blank' rel="noreferrer nofollow" >
-                            <img className='nav-red-icon' src={fb_logo} alt="logo facebook" / >
-                        </a>
-                        <a href="https://instagram.com/mejorobera?igshid=YmMyMTA2M2Y=" target='_blank' rel="noreferrer nofollow" >
-                            <img className='nav-red-icon' src={ig_logo} alt="logo instagram" / >
-                        </a>
-                    </div>
+                    <SocialNetwork component={"navbar"} />
                 </div>
                     <NavSponsors/>
             </div>
