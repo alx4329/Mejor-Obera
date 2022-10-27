@@ -7,7 +7,7 @@ import './Banners.css'
 
 const Banners = () =>{
     return(
-        <div className='home-banners' >
+        <div className='landing-banners' >
                 <div className="LogosBanner" >
                     <img className="banners-logo-mo" src={LogoMO} alt="logo mejor obera" />
                     <img className="banners-logo-mo cr" src={LogoMOinciativa} alt="logo mejor obera" />

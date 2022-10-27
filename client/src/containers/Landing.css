@@ -1,8 +1,8 @@
-.home-container{
+.landing-container{
     width: 100%;
     border: solid 1px green;
 }
-.home-banners{
+.landing-banners{
   width: 100%;
   aspect-ratio:2.5;
 }

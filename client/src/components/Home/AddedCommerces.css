@@ -1,0 +1,23 @@
+.home-commerces-container{
+    width: 80%;
+    /* height: 40rem; */
+    padding: 1rem;
+    position: absolute;
+    background-color: white;
+    border-radius: 2rem;
+    margin-left: 10%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    color:#8CC63F;
+    font-size: 1.5rem;
+    margin-top:13rem
+}
+
+.commerces-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

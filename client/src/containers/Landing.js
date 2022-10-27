@@ -12,7 +12,7 @@ const Home = () =>{
 
 
     return(
-        <div className='home-container' >
+        <div className='landing-container' >
             <Banners/>
             <Section1/>
             <Information/>

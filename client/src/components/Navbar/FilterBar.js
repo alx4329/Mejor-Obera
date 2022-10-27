@@ -16,7 +16,6 @@ const FilterBar=() =>{
     
     
     const goToCategory =(id)=>{
-        
         navigate(`/category/${id}`)
     }
     return(

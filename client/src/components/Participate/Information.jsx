@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from "../Carousel";
+
 import infoBackground from '../../assets/images/home/mejorobera_banner-que-es.jpg'
 import './Information.css'
 import logoMo from '../../assets/images/mejorobera.png'

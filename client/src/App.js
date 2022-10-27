@@ -1,6 +1,6 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Participate from './containers/Participate';
+
 import Landing from './containers/Landing';
 import PrivateRoute from './components/PrivateRoute';
 import Login from './containers/Login/Login';
@@ -16,7 +16,7 @@ function App() {
         <Route path='/private' element={<PrivateRoute/>} >
           <Route exact path='/private/comercio/:commerceId' element={[<LoggedCommerce/>]} />
         </Route>
-        <Route path='/participate' element={<Participate/>} />
+        
         <Route path='/home' element={<Home/>} />
         <Route path='/category/:id' element={<CategoryList/>} />
 
