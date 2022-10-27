@@ -40,7 +40,7 @@ const dbMongoose = () => {
         .connect(connectionString, dbConfig)
         .then(() => {
           console.log("Connection Database successful");
-          // categoriesLoader()
+          categoriesLoader()
           // usersLoader()
           resolve("Connection Database successful");
         })

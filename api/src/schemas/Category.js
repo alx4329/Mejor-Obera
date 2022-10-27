@@ -5,6 +5,9 @@ const categorySchema = new Schema({
     nombre:{
         type:String,
         required:true   
+    },
+    identifier:{
+        type:String,
     }
 })
 
