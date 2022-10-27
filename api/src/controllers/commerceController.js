@@ -13,13 +13,13 @@ const getAllByCategory = async (req,res) => {
     try{
         const commerces = await commerceService.getCommerces()
         const categories = await categoryService.getCategories()
-        const categorizedCommerces = categories.map(cat=>{
+        const categorizedCommerces = {}
+        categories.forEach(cat=>{
             const filtered = commerces.filter(commerce=>commerce.categorias.includes(cat.nombre))
-            const obj={
-                category:cat,
+            categorizedCommerces[cat._id]={
+                categoria:cat.nombre,
                 commerces: filtered
             }
-            return obj
         })
         return res.json({status:"ok", data:categorizedCommerces})
     }catch(e){
