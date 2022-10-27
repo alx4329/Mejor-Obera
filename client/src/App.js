@@ -1,20 +1,25 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Participate from './containers/Participate';
-import Home from './containers/Home';
+import Landing from './containers/Landing';
 import PrivateRoute from './components/PrivateRoute';
 import Login from './containers/Login/Login';
 import LoggedCommerce from './containers/LoggedCommerce/LoggedCommerce';
+import Home from './containers/Home/Home';
+import CategoryList from './containers/CategoryList/CategoryList';
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Home/>} />
+        <Route path='/' element={<Landing/>} />
         <Route exact path='/login' element={<Login/>}/>
         <Route path='/private' element={<PrivateRoute/>} >
           <Route exact path='/private/comercio/:commerceId' element={[<LoggedCommerce/>]} />
         </Route>
         <Route path='/participate' element={<Participate/>} />
+        <Route path='/home' element={<Home/>} />
+        <Route path='/category/:id' element={<CategoryList/>} />
+
       </Routes>
     </Router>
   );

@@ -55,7 +55,7 @@ const categoriesSlice = createSlice({
             state.error = payload;
         },
         [getCategories.pending]: (state, {payload}) => {
-            state.categories=null
+            state.categories=[]
             state.loading = true;
 
         }

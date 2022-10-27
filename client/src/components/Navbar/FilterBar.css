@@ -1,0 +1,13 @@
+.categories-container{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-left: 10%;
+}
+.category-container{
+    height: 3rem;
+    border: solid 1px #8CC63F;
+    border-radius: 50%;
+
+}
