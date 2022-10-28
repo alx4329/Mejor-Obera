@@ -11,13 +11,13 @@ const AddedCommerces = () =>{
         dispatch(getCategorizedCommerces())
     },[])
     const reduxCommerces = useSelector(state=>state.noAuth.commerces)
-    const commercesSlice = reduxCommerces.slice(0,25)
+    // const commercesSlice = reduxCommerces.slice(0,25)
     return(
         <div className='home-commerces-container' >
             <p>COMERCIOS ADHERIDOS</p>
             <div className='commerces-list'>
                 {
-                    commercesSlice && commercesSlice.map(item=>
+                    reduxCommerces && reduxCommerces.map(item=>
                         {return <CommerceCard info={item}/>}
                     )
                 }

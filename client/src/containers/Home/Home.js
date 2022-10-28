@@ -1,6 +1,7 @@
 import React from 'react'
 import Footer from '../../components/Footer/Footer'
 import AddedCommerces from '../../components/Home/AddedCommerces'
+import SponsorsHome from '../../components/Home/SponsorsHome'
 import SponsorLogos from '../../components/Landing/SponsorLogos'
 import Navbar from '../../components/Navbar/Navbar'
 import Slider from '../../components/Slider'
@@ -16,11 +17,13 @@ const Home = () =>{
                 <div className='home-slider' >
                     <Slider slides={windowSize.innerWidth>720? sliderImages.desktop:sliderImages.responsive} />
                 </div>
-                <AddedCommerces/>
                 <div className='green-background' ></div>
-                <div className='red-background' ></div>
+                <div className='red-background' >
+                <AddedCommerces/>
+                </div>
             </div>
-            <SponsorLogos/>
+            
+            <SponsorsHome/>
             <Footer/>
         </>
     )
