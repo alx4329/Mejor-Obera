@@ -8,6 +8,9 @@ const categorySchema = new Schema({
     },
     identifier:{
         type:String,
+    },
+    shortening:{
+        type:String
     }
 })
 
