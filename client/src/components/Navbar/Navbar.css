@@ -23,27 +23,32 @@
 .left-up-nav{
     display: flex;
     align-items: center;
-    width: 50%;
-    justify-content: space-around;
+    width: 60%;
+    justify-content: space-between;
 }
 .left-up-nav p{
-    color:#8CC63F
+    color:#8CC63F;
 }
 .logo-nav-mo{
     height: 2.5rem;
 }
 .nav-fecha-evento{
     font-size: 0.8rem;
-    color:#8CC63F
+    color:#8CC63F;
 }
 .nav-red-icon{
     height: 2rem;
 }
 .nav-redes{
     display: flex;
-    width: 15%;
     justify-content: space-around;
     align-items: center;
+    width: 50%;
+}
+.nav-redes-container{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
 }
     .bottom-header-nav{
         display: flex;
@@ -51,3 +56,20 @@
         font-size: 0.9rem;
         color: #FF0000
     }
+
+    @media (max-width:900px)  {
+    .up-nav{
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+    @media (max-width:850px)  {
+    .bottom-header-nav{
+        font-size: 0.8rem;
+    }
+}
+    @media (max-width:720px)  {
+    .bottom-header-nav{
+        font-size: 0.7rem;
+    }
+}

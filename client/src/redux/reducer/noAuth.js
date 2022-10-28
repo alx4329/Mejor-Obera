@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import axios from 'axios'
+// import axios from 'axios'
+import axios from '../../api/index'
 
 const initialState={
     commerces:[],
@@ -11,7 +12,7 @@ export const getCommerces = createAsyncThunk(
     async (_, {rejectWithValue})=>{
         console.log("getting commerces")
         try{
-            const commerces = await axios.get(`/no/commerce/all`)
+            const commerces = await axios.request("get",`/no/commerce/all`)
             
             return commerces.data.data
         }catch(e){
@@ -26,8 +27,8 @@ export const getCommerces = createAsyncThunk(
             console.log("getting categorized commerces")
             
         try{
-            const commerce = await axios.get(`/no/commerce/category`)
-            
+            const commerce = await axios.request("get",`/no/commerce/category`)
+            console.log(commerce)
             return commerce.data.data
         }catch(e){
             console.log(e)

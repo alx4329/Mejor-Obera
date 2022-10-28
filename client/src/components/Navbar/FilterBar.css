@@ -16,3 +16,17 @@
     background-color: rgb(216, 212, 212);
     cursor: pointer;
 }
+@media (max-width:900px)  {
+    .categories-container{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .category-container{
+        height: 2.4rem;
+    }
+}
+@media (max-width:800px)  {
+    .category-container{
+        height: 2.2rem;
+    }
+}

@@ -64,14 +64,7 @@ const Footer = () =>{
                 }
                     <div className='footer-adheri' >Adherí tu comercio</div>
                 </div>
-                <div className='colummna-footer bases' >El uso de este sitio web implica la aceptación 
-de los Términos y condiciones y de las Políticas 
-Privacidad del MejorOberá.
-Las ofertas y/o promociones son ofrecidos en 
-forma directa por los Comercios Adheridos 
-y no por la CRIPCO. Consulte los comercios de cada 
-uno de los adheridos para conocer los Términos 
-y Condiciones de cada oferta y/o promoción.</div>
+                <div className='colummna-footer bases' >El uso de este sitio web implica la aceptación de los Términos y condiciones y de las Políticas Privacidad del MejorOberá. Las ofertas y/o promociones son ofrecidos en forma directa por los Comercios Adheridos y no por la CRIPCO. Consulte los comercios de cada uno de los adheridos para conocer los Términos y Condiciones de cada oferta y/o promoción.</div>
             </div>
         </div>
     )

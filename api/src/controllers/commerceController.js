@@ -16,7 +16,7 @@ const getAllByCategory = async (req,res) => {
         const categorizedCommerces = {}
         categories.forEach(cat=>{
             const filtered = commerces.filter(commerce=>commerce.categorias.includes(cat.nombre))
-            categorizedCommerces[cat._id]={
+            categorizedCommerces[cat.shortening]={
                 categoria:cat.nombre,
                 commerces: filtered
             }

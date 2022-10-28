@@ -38,3 +38,12 @@
     justify-content: space-around;
     align-items: center;
 }
+.bases{
+    width: 25%;
+}
+@media (max-width:900px)  {
+    .footer-content{
+        width: 90%;
+        margin-left: 5%;
+    }
+}

@@ -7,6 +7,7 @@ import Login from './containers/Login/Login';
 import LoggedCommerce from './containers/LoggedCommerce/LoggedCommerce';
 import Home from './containers/Home/Home';
 import CategoryList from './containers/CategoryList/CategoryList';
+import Navbar from './components/Navbar/Navbar';
 function App() {
   return (
     <Router>
@@ -17,8 +18,8 @@ function App() {
           <Route exact path='/private/comercio/:commerceId' element={[<LoggedCommerce/>]} />
         </Route>
         
-        <Route path='/home' element={<Home/>} />
-        <Route path='/category/:id' element={<CategoryList/>} />
+        <Route path='/home' element={[<Navbar/>,<Home/>]} />
+        <Route path='/:id' element={[<Navbar/>,<CategoryList/>]} />
 
       </Routes>
     </Router>

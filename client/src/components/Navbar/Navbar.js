@@ -5,8 +5,12 @@ import Search from './Search'
 import './Navbar.css'
 import FilterBar from './FilterBar'
 import SocialNetwork from '../SocialNetwork'
+import { useNavigate } from 'react-router-dom'
 const Navbar = () =>{
-
+    const navigate = useNavigate()
+    const goHome = () =>{
+        navigate('/home')
+    }
     return(
         <div className='navbar-container' >
             <div className='upper-header-nav' >
@@ -14,13 +18,15 @@ const Navbar = () =>{
             </div>
             <div className='up-nav'>
                 <div className='left-up-nav' >
-                    <img src={LogoMO} className="logo-nav-mo" alt='Logo Mejor Obera'/>
+                    <img onClick={goHome} src={LogoMO} className="logo-nav-mo" alt='Logo Mejor Obera'/>
                     <div className='nav-fecha-evento' >
-                        <p>4,5 y 6 <br/>
-                        DE NOVIEMBRE</p>
+                        <p>4,5 y 6 DE<br/>
+                        NOVIEMBRE</p>
                     </div>
                     <Search/>
-                    <SocialNetwork component={"navbar"} />
+                    <div className='nav-redes-container' >
+                        <SocialNetwork component={"navbar"} />
+                    </div>
                 </div>
                     <NavSponsors/>
             </div>

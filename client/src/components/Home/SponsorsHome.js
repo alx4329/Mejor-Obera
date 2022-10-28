@@ -1,5 +1,5 @@
 import React from 'react'
-import logoCrip from '../../assets/images/home/colorSponsors/mejorobera_cripco.svg'
+import logoCrip from '../../assets/cripco_rect.svg'
 import logoMuni from '../../assets/images/home/colorSponsors/mejorobera-23.svg'
 import logoMis from '../../assets/images/home/colorSponsors/mejorobera_misiones.svg'
 import logoCem from '../../assets/images/home/colorSponsors/mejorobera_cem.svg'
@@ -46,7 +46,7 @@ const SponsorsHome = () =>{
                 <div className='left-sponsor' >
                     <div className='sponsor-title' >INICIATIIVA</div>
                     <a href={logos[0].uri} target='_blank' rel="noreferrer nofollow" >
-                        <img title={logos[0].title} className='sponsor-home-container' src={logos[0].logo} alt="logo" / >
+                        <img title={logos[0].title} className='sponsor-home-container-cripco' src={logos[0].logo} alt="logo" / >
                     </a>
                 </div>
                 <div className='right-sponsor' >

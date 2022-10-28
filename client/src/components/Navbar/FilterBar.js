@@ -15,8 +15,8 @@ const FilterBar=() =>{
     },[])
     
     
-    const goToCategory =(id)=>{
-        navigate(`/category/${id}`)
+    const goToCategory =(section)=>{
+        navigate(`/${section}`)
     }
     return(
         <div className="categories-container" >
@@ -24,7 +24,7 @@ const FilterBar=() =>{
                 categories && categories.map((cat,i)=>{
                     
                     return (
-                        <img className="category-container" key={cat._id} name={cat._id}  onClick={()=>goToCategory(cat._id)} src={`/categories/${cat.identifier}.svg`} alt={cat.nombre} title={cat.nombre}/>
+                        <img className="category-container" key={cat._id} name={cat._id}  onClick={()=>goToCategory(cat.shortening)} src={`/categories/${cat.identifier}.svg`} alt={cat.nombre} title={cat.nombre}/>
                     )
                 })
             }
