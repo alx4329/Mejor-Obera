@@ -56,3 +56,11 @@
         margin-left: 5%;
     }
 }
+@media (max-width:720px)  {
+    .sponsor-home-container{
+        height: 4rem;
+    }
+    .sponsor-home-container-cripco{
+        height: 4rem;
+    }
+}

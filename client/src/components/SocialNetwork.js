@@ -5,7 +5,7 @@ const SocialNetwork = ({component}) => {
     return (
         <>
             <p>Seguinos</p>
-            <div className={component==="navbar"? 'nav-redes':'footer-redes'}>
+            <div className={component==="navbar"? 'nav-redes':(component==="res-navbar"?"res-nav-redes":'footer-redes')}>
                 <a href="https://www.facebook.com/profile.php?id=100086669450468" target='_blank' rel="noreferrer nofollow" >
                     <img title='Facebook Mejor Obera' className='nav-red-icon' src={fb_logo} alt="logo facebook" / >
                 </a>

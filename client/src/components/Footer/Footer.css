@@ -47,3 +47,12 @@
         margin-left: 5%;
     }
 }
+@media (max-width:720px)  {
+    .footer-content{
+        width: 96%;
+        margin-left: 2%;
+    }
+    .bases{
+        width: 35%;
+    }
+}

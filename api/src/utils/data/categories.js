@@ -2,107 +2,128 @@ const categories = [
     {
         nombre:"Electro, Tecno, Informática, Celulares",
         identifier:"Electro,Tecno,Informatica,Celulares",
-        shortening:"electro"
+        shortening:"electro",
+        tag:"Electro y Tecno"
     },
     {
         nombre:"Gastronomía, Heladería, Bar, Restaurante",
         identifier:"Gastronomia",
-        shortening:"gastronomia"
+        shortening:"gastronomia",
+        tag:"Gastronomia"
     },
     {
         nombre:"Frutería, verdulería, mercado, minimercado",
         identifier:"FruteriaVerduleria",
-        shortening:"mercado"
+        shortening:"mercado",
+        tag:"Supermercado"
     },
     {
         nombre:"Muebles, Hogar y Deco, Bazar",
         identifier:"Muebles",
-        shortening:"hogar"
+        shortening:"hogar",
+        tag:"Muebles"
     },
     {
         nombre:"Ferretería, Herramientas y materiales",
         identifier:"Ferreteria",
-        shortening:"ferreteria"
+        shortening:"ferreteria",
+        tag:"Ferretería"
     },
     {
         nombre:"Indumentaria, Calzado, Lencería, Boutique",
         identifier:"Indumentaria",
-        shortening:"indumentaria"
+        shortening:"indumentaria",
+        tag:"Indumentaria"
     },
     {
         nombre:"Bebés y Niños",
         identifier:"BebesyNiños",
-        shortening:"ninos"
+        shortening:"ninos",
+        tag:"Bebés y Niños"
     },
     {
         nombre:"Veterninaria, Agroveterinaria, Animales y Mascotas",
         identifier:"Veterninaria",
-        shortening:"verinaria"
+        shortening:"verinaria",
+        tag:"Veterinaria"
     },
     {
         nombre:"Regalería, Juguetería, Librería",
         identifier:"Regaleria",
-        shortening:"regaleria"
+        shortening:"regaleria",
+        tag:"Regalería y Librería"
     },
     {
         nombre:"Mercería, Cotillón, Repostería",
         identifier:"Merceria",
-        shortening:"merceria"
+        shortening:"merceria",
+        tag:"Mercería"
     },
     {
         nombre:"Farmacia, Perfumería, Limpieza",
         identifier:"CosmeticayBelleza",
-        shortening:"farmacia"
+        shortening:"farmacia",
+        tag:"Farmacia"
     },
     {
         nombre:"Cosmética y Belleza",
         identifier:"CosmeticayBelleza",
-        shortening:"cosmetica"
+        shortening:"cosmetica",
+        tag:"Cosmética y Belleza"
     },
     {
         nombre:"Deportes y Fiteness",
         identifier:"DeportesyFiteness",
-        shortening:"deportes"
+        shortening:"deportes",
+        tag:"Deportes"
     },
     {
         nombre:"Diseño, Imprentas y Gráficas",
         identifier:"Diseño,ImprentasyGraficas",
-        shortening:"diseño"
+        shortening:"diseño",
+        tag:"Diseño"
     },
     {
         nombre:"Joyería y Relojería",
         identifier:"OpticaJoyeriayRelojeria",
-        shortening:"joyeria"
+        shortening:"joyeria",
+        tag:"Joyería"
     },
     {
         nombre:"Óptica",
         identifier:"OpticaJoyeriayRelojeria",
-        shortening:"optica"
+        shortening:"optica",
+        tag:"Óptica"
     },
     {
         nombre:"Hotelería y Turismo",
         identifier:"HoteleriayTurismo",
-        shortening:"hoteleria"
+        shortening:"hoteleria",
+        tag:"Turismo"
     },
     {
         nombre:"Automotriz, Motocicletas, Bicicletas",
         identifier:"Automotriz,Motocicletas,Bicicletas",
-        shortening:"automotriz"
+        shortening:"automotriz",
+        tag:"Autos"
     },
     {
         nombre:"Agroindustria y Maquinarias",
         identifier:"AgroindustriayMaquinarias",
-        shortening:"maquinaria"
+        shortening:"maquinaria",
+        tag:"Agroindustria"
     },
     {
         nombre:"Servicios, Oficinas y Agencias",
         identifier:"ServiciosOficinas",
-        shortening:"servicios"
+        shortening:"servicios",
+        tag:"Servicios"
     },
     {
         nombre:"Varios",
         identifier:"Varios",
-        shortening:"varios"
+        shortening:"varios",
+        tag:"Varios"
     },
 ]
 

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import CommerceCard from "../../components/Home/CommerceCard";
+import Navbar from "../../components/Navbar/Navbar";
 import { getCategorizedCommerces } from "../../redux/reducer/noAuth";
 import './CategoryList.css'
 const CategoryList = () =>{
@@ -16,6 +17,7 @@ const CategoryList = () =>{
     // if(reduxCommerces[id]===undefined) return(<div>Categoria {id} no existe</div>)
     return(
         <>
+            <Navbar/>
             <div className='home-container' >                
                 <div className='green-background-category' ></div>
                 <div className='red-background' >                        

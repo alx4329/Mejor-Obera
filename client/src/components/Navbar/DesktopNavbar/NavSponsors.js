@@ -1,13 +1,13 @@
 import React from 'react'
 import './NavSponsors.css'
-import logoCrip from '../../assets/cripco_rect.svg'
-import logoMuni from '../../assets/images/home/colorSponsors/mejorobera-23.svg'
-import logoMis from '../../assets/images/home/colorSponsors/mejorobera_misiones.svg'
-import logoCem from '../../assets/images/home/colorSponsors/mejorobera_cem.svg'
-import logoTur from '../../assets/images/home/colorSponsors/mejorobera_cámara turismo.svg'
-import logoFed from '../../assets/images/home/colorSponsors/mejorobera_federación.svg'
+import logoCrip from '../../../assets/cripco_rect.svg'
+import logoMuni from '../../../assets/images/home/colorSponsors/mejorobera-23.svg'
+import logoMis from '../../../assets/images/home/colorSponsors/mejorobera_misiones.svg'
+import logoCem from '../../../assets/images/home/colorSponsors/mejorobera_cem.svg'
+import logoTur from '../../../assets/images/home/colorSponsors/mejorobera_cámara turismo.svg'
+import logoFed from '../../../assets/images/home/colorSponsors/mejorobera_federación.svg'
 
-const NavSponsors = () =>{
+const NavSponsors = ({res}) =>{
     const logos =[
         {
             logo:logoCrip,
@@ -42,12 +42,12 @@ const NavSponsors = () =>{
         },
     ]
     return(
-        <div className='sponsors-logos-nav-container' >
+        <div className={res?"res-sponsors-logos-nav-container":'sponsors-logos-nav-container'} >
             {
                 logos.map(item=>{
                     return (
                         <a href={item.uri} target='_blank' rel="noreferrer nofollow" >
-                            <img title={item.title} className='sponsor-logo-nav-container' src={item.logo} alt="logo" / >
+                            <img title={item.title} className={res?"res-sponsor-logo-nav-container":'sponsor-logo-nav-container'} src={item.logo} alt="logo" / >
                         </a>
                     )
                 })
