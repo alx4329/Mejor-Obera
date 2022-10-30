@@ -48,7 +48,9 @@ const commerceSchema = new Schema({
     imageUrl:{
         type:String
     },
-
+    auspicia:{
+        type:Boolean
+    }
 },
 {timestamps:true}
 )

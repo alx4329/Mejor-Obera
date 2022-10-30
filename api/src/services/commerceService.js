@@ -71,7 +71,7 @@ const createCommerce = async(commerce) => {
                         reject(err)
                     } else{
                         console.log("Comercio agregado"+obj.nombre)
-                        resolve("Comercio agregado"+obj.nombre)
+                        resolve({id:newCommerce._id})
                     }
                 })
             // }else console.log("alreadyExists",alreadyExists)
@@ -114,11 +114,38 @@ const imageLocation = async (image) => {
     } else return image.tempFilePath
 }
 const uploadLogo = async(commerceId,image) =>{
+    console.log(image)
     return new Promise(async(resolve,reject)=>{
         try{
             const location = await imageLocation(image)
+            console.log(location)
             await cloudinary.uploader.upload(
                 location,
+                {folder:"profilePictures"},
+                async (err,result) => {
+                    if (err) {
+                        reject("Error occurred while uploading file");
+                    } else {
+                        //get saved image url
+                        imageUrl = result.secure_url;
+                        const editPicture = await editCommerce(commerceId,{imageUrl})
+                        resolve(imageUrl)
+                        }
+                    }
+            )
+        }catch(e){
+            reject(e.message||e)
+        }
+    })
+}
+const uploadFromLocal = async(commerceId,path) =>{
+    // console.log(image)
+    return new Promise(async(resolve,reject)=>{
+        try{
+            // const location = await imageLocation(image)
+            // console.log(location)
+            await cloudinary.uploader.upload(
+                path,
                 {folder:"profilePictures"},
                 async (err,result) => {
                     if (err) {
@@ -145,5 +172,6 @@ module.exports = {
     getCommercesByCategory,
     editCommerce,
     uploadLogo,
-    findCommerceByUser
+    findCommerceByUser,
+    uploadFromLocal
 }

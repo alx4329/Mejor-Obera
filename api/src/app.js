@@ -26,7 +26,7 @@ app.use((req, res, next) => {
     next();
   });
 /*Routes*/
-app.use('/commerce',authMiddleware,commerceRoutes)
+app.use('/commerce',/* authMiddleware ,*/commerceRoutes)
 app.use('/categories',/* authMiddleware, */categorieRoutes)
 /* no auth routes */
 app.use('/users',userRoutes)
