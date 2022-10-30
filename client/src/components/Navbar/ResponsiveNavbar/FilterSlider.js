@@ -9,28 +9,31 @@ import "swiper/css/pagination";
 import "./FilterSlider.css";
 
 // import required modules
-import { Pagination } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 
 const FilterSlider= ({slides,action})=> {
   return (
     <>
     <Swiper
-        slidesPerView={10}
+        slidesPerView={6}
         spaceBetween={30}
         pagination={{
             clickable: true,
         }}
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         className="mySwiper-nav"
         autoplay={{
             delay: 2500,
-            disableOnInteraction: false,
+            disableOnInteraction: true,
             }}
     >
         {
             slides.map((cat,i)=>{
                 return <SwiperSlide className="swiper-slide-nav" >
-                <img className="category-container-nav" key={cat._id} name={cat._id}  onClick={()=>action(cat.shortening)} src={`/categories/${cat.identifier}.svg`} alt={cat.nombre} title={cat.nombre}/>
+                <div className="res-category-container" >
+                    <img className="category-container-nav" key={cat._id} name={cat._id}  onClick={()=>action(cat.shortening)} src={`/categories/${cat.identifier}.svg`} alt={cat.nombre} title={cat.nombre}/>
+                    <div className="res-category-tag" >{cat.tag}</div>
+                </div>
                     </SwiperSlide>
             })
         }

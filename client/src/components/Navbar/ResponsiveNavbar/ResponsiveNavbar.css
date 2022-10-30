@@ -1,8 +1,11 @@
 .res-navbar-container{
     width: 100%;
-    height: 15rem;
+    /* height: 20rem; */
     display: flex;
     flex-direction: column;
+    position:fixed;
+    z-index: 2;
+    background-color: white;
 }
 .res-upper-header-nav{
     display: flex;
@@ -16,9 +19,9 @@
 }
 .res-up-nav{
     display: flex;
-    width: 80%;
+    width: 90%;
     height: 40%;
-    margin-left: 10%;
+    margin-left: 5%;
     justify-content: space-between;
     align-items: center;
 }
@@ -42,7 +45,7 @@
     color:#8CC63F;
 }
 .res-logo-nav-mo{
-    height: 3.5rem;
+    height: 5rem;
 }
 .res-nav-fecha-evento{
     font-size: 0.8rem;
@@ -64,9 +67,11 @@
 }
     .res-bottom-header-nav{
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         font-size: 0.9rem;
-        color: #FF0000
+        color: #FF0000;
+        padding-bottom: 0.1rem;
     }
     .res-sponsors-logos-nav-container{
         margin-bottom: 1rem;
@@ -82,6 +87,9 @@
         border-radius: 0.5rem;
         border: solid 2px #8CC63F
         /* width: 10rem; */
+    }
+    .res-nav-middle-container{
+        padding-top: 1rem;
     }
     @media (max-width:900px)  {
     .res-up-nav{

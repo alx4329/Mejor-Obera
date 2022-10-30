@@ -11,6 +11,9 @@ const categorySchema = new Schema({
     },
     shortening:{
         type:String
+    },
+    tag:{
+        type:String
     }
 })
 

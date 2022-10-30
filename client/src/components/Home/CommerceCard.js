@@ -1,7 +1,6 @@
 import React from 'react'
 import './CommerceCard.css'
 const CommerceCard = ({info}) => {
-    console.log(info)
     return(
         <div className='card-container' >
             <div className='card-picture'>

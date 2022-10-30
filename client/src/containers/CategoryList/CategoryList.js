@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import CommerceCard from "../../components/Home/CommerceCard";
 import Navbar from "../../components/Navbar/Navbar";
+import useWindowSize from "../../hooks/useWindowSize";
 import { getCategorizedCommerces } from "../../redux/reducer/noAuth";
 import './CategoryList.css'
 const CategoryList = () =>{
@@ -12,13 +13,12 @@ const CategoryList = () =>{
     const dispatch=useDispatch()
     useEffect(()=>{
         if(Object.keys(reduxCommerces).length===0) dispatch(getCategorizedCommerces())
-        console.log(Object.keys(reduxCommerces))
     },[])
-    // if(reduxCommerces[id]===undefined) return(<div>Categoria {id} no existe</div>)
+    const windowSize = useWindowSize()
     return(
         <>
             <Navbar/>
-            <div className='home-container' >                
+            <div className={windowSize.innerWidth<720 ?"res-home-container":'home-container'} >                
                 <div className='green-background-category' ></div>
                 <div className='red-background' >                        
                     <div className='home-commerces-container' >
@@ -32,8 +32,8 @@ const CategoryList = () =>{
                         </div>
                     </div>
                 </div>
-            </div>
             <Footer/>
+            </div>
         </>
     )
 }

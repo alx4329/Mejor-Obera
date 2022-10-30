@@ -20,13 +20,14 @@ const FilterBar=({res}) =>{
         navigate(`/${section}`)
     }
     return(
-        <div className="categories-container" >
-            {res?<FilterSlider slides={categories} />:(
-                categories && categories.map((cat,i)=>{                    
+        <div className={res?"res-categories-container" :"categories-container"} >
+            {res?<FilterSlider slides={categories} action={goToCategory} />:(
+                categories && categories.map((cat,i)=>{
+                    console.log(cat.tag)
                     return (
-                        <div>
-                            <img className="category-container" key={cat._id} name={cat._id}  onClick={()=>goToCategory(cat.shortening)} src={`/categories/${cat.identifier}.svg`} alt={cat.nombre} title={cat.nombre}/>
-                            <div>{cat.tag}</div>
+                        <div className="category-container" >
+                            <img className="category-image" key={cat._id} name={cat._id}  onClick={()=>goToCategory(cat.shortening)} src={`/categories/${cat.identifier}.svg`} alt={cat.nombre} title={cat.nombre}/>
+                            <div className="category-tag" >{cat.tag}</div>
                         </div>
                         
                     )

@@ -1,8 +1,12 @@
 .navbar-container{
     width: 100%;
-    height: 10rem;
+    /* height: 10rem; */
     display: flex;
     flex-direction: column;
+    position:fixed;
+    z-index: 2;
+    background-color: white;
+    padding-bottom: 1rem;
 }
 .upper-header-nav{
     display: flex;
@@ -14,9 +18,11 @@
     ;
 }
 .up-nav{
+    position: relative;
+    top: 0px;
     display: flex;
     width: 80%;
-    height: 40%;
+    height: 5rem;
     margin-left: 10%;
     justify-content: space-between;
 }
@@ -30,7 +36,7 @@
     color:#8CC63F;
 }
 .logo-nav-mo{
-    height: 2.5rem;
+    height: 4rem;
 }
 .nav-fecha-evento{
     font-size: 0.8rem;
@@ -54,7 +60,8 @@
         display: flex;
         justify-content: center;
         font-size: 0.9rem;
-        color: #FF0000
+        color: #FF0000;
+        padding-top: 1rem;
     }
 
     @media (max-width:900px)  {

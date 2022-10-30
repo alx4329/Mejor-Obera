@@ -14,7 +14,7 @@ const Home = () =>{
     return (
         <>
             <Navbar/>
-            <div className='home-container' >
+            <div className={windowSize.innerWidth<720?"res-home-container": 'home-container'} >
                 <div className='green-background' >
                     <div className='home-slider' >
                         <Slider slides={windowSize.innerWidth>720? sliderImages.desktop:sliderImages.responsive} />
@@ -24,10 +24,10 @@ const Home = () =>{
                 <div className='red-background' >
                 <AddedCommerces/>
                 </div>
-            </div>
-            
             <SponsorsHome/>
             <Footer/>
+            </div>
+            
         </>
     )
 }

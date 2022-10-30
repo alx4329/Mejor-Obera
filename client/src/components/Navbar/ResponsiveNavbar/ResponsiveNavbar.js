@@ -14,7 +14,7 @@ const ResponsiveNavbar = () =>{
     return(
         <div className='res-navbar-container' >
             <div className='res-upper-header-nav' >
-                <div>4,5 y 6 de Noviembre • Buscá los comercios adheridos y aprovechá las ofertas</div>
+                <div>4,5 y 6 de Noviembre • Aprovechá las ofertas</div>
             </div>
             <div className='res-nav-middle-container' >
                 <NavSponsors res={true}/>
@@ -31,7 +31,9 @@ const ResponsiveNavbar = () =>{
                 <FilterBar res={true}/>
             </div>
             <div className='res-bottom-header-nav' >
-            A PARTIR DEL 3 DE NOVIEMBRE ENCONTRÁ LOS COMERCIOS ADHERIDOS • OFERTAS • DESCUENTOS • PROMOCIONES • MEJOR OBERÁ
+            <div>A PARTIR DEL 3 DE NOVIEMBRE ENCONTRÁ LOS COMERCIOS ADHERIDOS •</div> 
+            <div>OFERTAS • DESCUENTOS • PROMOCIONES • MEJOR OBERÁ</div>
+            
             </div>
         </div>
     )
