@@ -41,7 +41,7 @@ const dbMongoose = () => {
         .then(() => {
           console.log("Connection Database successful");
           // categoriesLoader()
-          usersLoader()
+          // usersLoader()
           resolve("Connection Database successful");
         })
         .catch((err) => {

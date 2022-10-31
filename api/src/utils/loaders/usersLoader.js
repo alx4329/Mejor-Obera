@@ -27,9 +27,9 @@ const usersLoader = async () => {
                             otro_url:data.otro_url,
                             userId:alreadyExists[0]._id
                         })
-                        // const imagePath = `C:\\Users\\Alx\\Documents\\GitHub\\Mejor-Obera\\api\\src\\utils\\logos_comercios\\mejorobera_${data.nombreComercio}.jpg`
-                        // const uploaded = await commerceService.uploadFromLocal(newCommerce.id,imagePath)
-                        // console.log(uploaded)
+                        const imagePath = `C:\\Users\\Alx\\Documents\\GitHub\\Mejor-Obera\\api\\src\\utils\\logos_comercios\\mejorobera_${data.nombreComercio}.jpg`
+                        const uploaded = await commerceService.uploadFromLocal(newCommerce.id,imagePath)
+                        console.log(uploaded)
                     }else{
                         const newUser = await userService.createUser(data.email||data.emailComercio,data.CUIT.toString(),data.telefono,data.CUIT)
                         console.log("newUser",newUser)
