@@ -45,10 +45,10 @@ const CommerceDetail = () =>{
                         <SocialCommerceNetwork details={details}/>
                     </div>
                 </div>
-                <div className="green-background-detail" >
+                {/* <div className="green-background-detail" >
                     <div className="commerce-detail-products" >Ofertas</div>
                     <div className="commerce-detail-location" >MAPA</div>
-                </div>
+                </div> */}
                 <Footer/>
             </div>
         </>

@@ -21,18 +21,10 @@ const FilterBar=({res}) =>{
     }
     return(
         <div className={res?"res-categories-container" :"categories-container"} >
-            {res?<FilterSlider slides={categories} action={goToCategory} />:(
-                categories && categories.map((cat,i)=>{
-                    console.log(cat.tag)
-                    return (
-                        <div key={cat._id} className="category-container" >
-                            <img className="category-image"  name={cat._id}  onClick={()=>goToCategory(cat.shortening)} src={`/categories/${cat.identifier}.svg`} alt={cat.nombre} title={cat.nombre}/>
-                            <div className="category-tag" >{cat.tag}</div>
-                        </div>
-                        
-                    )
-                })
-            )
+            {res?<FilterSlider slides={categories} action={goToCategory} number={6} />:(
+                <FilterSlider slides={categories} action={goToCategory} number={10} />)
+                
+            
             }
                     
         </div>
