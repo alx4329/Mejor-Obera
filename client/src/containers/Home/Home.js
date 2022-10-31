@@ -6,7 +6,7 @@ import Navbar from '../../components/Navbar/Navbar'
 import Slider from '../../components/Slider'
 import useWindowSize from '../../hooks/useWindowSize'
 import sliderImages from '../../utils/sliderImages'
-import home_banner_desktop from '../../assets/home_banners/MO_banner_escritorio.png'
+import home_banner_desktop from '../../assets/home_banners/MO_banner_escritorio.jpg'
 import home_banner_mobile from '../../assets/home_banners/MO_banner_móvil.jpg'
 
 import './Home.css'

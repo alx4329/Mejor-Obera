@@ -16,9 +16,9 @@ const ResponsiveNavbar = () =>{
             <div className='res-upper-header-nav' >
                 <div>3, 4, 5 y 6 de Noviembre • Aprovechá las ofertas</div>
             </div>
-            <div className='res-nav-middle-container' >
+            {/* <div className='res-nav-middle-container' >
                 <NavSponsors res={true}/>
-            </div>
+            </div> */}
             <div className='res-up-nav' >
                 <img onClick={goHome} src={LogoMO} className="res-logo-nav-mo" alt='Logo Mejor Obera'/>
                 <Search res={true} />
@@ -31,8 +31,8 @@ const ResponsiveNavbar = () =>{
                 <FilterBar res={true}/>
             </div>
             <div className='res-bottom-header-nav' >
-            <div>A PARTIR DEL 3 DE NOVIEMBRE ENCONTRÁ LOS COMERCIOS ADHERIDOS •</div> 
-            <div>OFERTAS • DESCUENTOS • PROMOCIONES • MEJOR OBERÁ</div>
+            {/* <div>A PARTIR DEL 3 DE NOVIEMBRE ENCONTRÁ LOS COMERCIOS ADHERIDOS •</div> 
+            <div>OFERTAS • DESCUENTOS • PROMOCIONES • MEJOR OBERÁ</div> */}
             
             </div>
         </div>

@@ -1,10 +1,11 @@
 .sponsors-logos-nav-container{
-    margin-bottom: 4rem;
+    /* margin-bottom: 3rem; */
     width: 40%;
     display: flex;
     justify-content:space-around;
     height: 100%;
     align-items: center;
+    
 }
 
 .sponsor-logo-nav-container{
