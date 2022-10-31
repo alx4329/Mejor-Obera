@@ -1,3 +1,18 @@
+.res-detail-container{
+    position: relative;
+    top: 20rem;
+    display: flex;
+    flex-direction: column;
+}
+.res-red-background-container{
+    display: flex;
+    justify-content: center;
+    background-color: #ED1C24;
+    width: 100%;
+    /* font-family: 'Nunito', sans-serif; */
+    color: white;
+    flex-direction: column;
+}
 .green-background-detail{
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -8,17 +23,25 @@
 }
 .red-background-detail{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     background-color: #ED1C24;
     width: 100%;
     /* font-family: 'Nunito', sans-serif; */
     color: white;
 }
 .commerce-detail-left{
-    width: 40%;
+    width: 30%;
+}
+.res-commerce-detail-left{
+    width: 80%;
+    margin-left: 10%;
 }
 .commerce-detail-right{
     width:40%
+}
+.res-commerce-detail-right{
+    width:80%;
+    margin-left: 10%;
 }
 .commerce-detail-nombre{
     font-size: 2rem;
@@ -34,6 +57,10 @@
     height: 6rem;
     justify-content: space-between;
     margin-bottom: 2rem;
+}
+.detail-image{
+    width: 100%;
+    object-fit: contain;
 }
 .detail-cat{
     font-size: 0.8rem;

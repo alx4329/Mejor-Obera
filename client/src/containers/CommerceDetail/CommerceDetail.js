@@ -23,12 +23,12 @@ const CommerceDetail = () =>{
     return(
         <>
             <Navbar/>
-            <div className={windowSize.innerWidth<720?"res-home-container": 'home-container'} >
-                <div className="red-background-detail" >
-                    <div className="commerce-detail-left" >
+            <div className={windowSize.innerWidth<720?"res-detail-container": 'home-container'} >
+                <div className={windowSize.innerWidth<720?"res-red-background-container" : "red-background-detail"} >
+                    <div className={ windowSize.innerWidth<720?"res-commerce-detail-left" : "commerce-detail-left" }>
                         <img className="detail-image" src={details.imageUrl||"https://random.imagecdn.app/400/400"} alt=""/>
                     </div>
-                    <div className="commerce-detail-right" >
+                    <div className={ windowSize.innerWidth<720?"res-commerce-detail-right" : "commerce-detail-right" } >
                         <div className="detail-title" >
                             <div>
                                 <div className="commerce-detail-nombre" >{details.nombre}</div>
