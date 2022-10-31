@@ -7,6 +7,7 @@
 }
 .card-container:hover{
     border: solid 1px #8CC63F;
+    cursor: pointer;
 }
 .card-picture{
     height: 7rem;

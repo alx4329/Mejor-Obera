@@ -38,6 +38,9 @@
 .logo-nav-mo{
     height: 4rem;
 }
+.logo-nav-mo:hover{
+    cursor:pointer
+}
 .nav-fecha-evento{
     font-size: 0.8rem;
     color:#8CC63F;

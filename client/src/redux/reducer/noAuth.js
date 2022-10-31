@@ -4,7 +4,8 @@ import axios from '../../api/index'
 
 const initialState={
     commerces:[],
-    categorizedCommerces:{}
+    categorizedCommerces:{},
+    commerceDetail:{}
 }
 
 export const getCommerces = createAsyncThunk(
@@ -13,7 +14,6 @@ export const getCommerces = createAsyncThunk(
         console.log("getting commerces")
         try{
             const commerces = await axios.request("get",`/no/commerce/all`)
-            
             return commerces.data.data
         }catch(e){
             console.log(e)
@@ -21,14 +21,27 @@ export const getCommerces = createAsyncThunk(
         }
     }
     )
-    export const getCategorizedCommerces = createAsyncThunk(
-        'getCategorizedCommerces',
-        async (_, {rejectWithValue})=>{
-            console.log("getting categorized commerces")
-            
+export const getCategorizedCommerces = createAsyncThunk(
+    'getCategorizedCommerces',
+    async (_, {rejectWithValue})=>{
+        console.log("getting categorized commerces")
+        
+    try{
+        const commerce = await axios.request("get",`/no/commerce/category`)
+        console.log(commerce)
+        return commerce.data.data
+    }catch(e){
+        console.log(e)
+        return rejectWithValue({message:e.response.data.error||e.message})
+    }
+}
+)
+export const getDetailCommerce = createAsyncThunk(
+    'getDetailCommerce',
+    async ({commerceId}, {rejectWithValue})=>{
         try{
-            const commerce = await axios.request("get",`/no/commerce/category`)
-            console.log(commerce)
+            const commerce = await axios.request("get", `/no/commerce/${commerceId}`)
+            
             return commerce.data.data
         }catch(e){
             console.log(e)
@@ -43,6 +56,14 @@ const noAuthSlice = createSlice({
         cleanCommerces:{
             cleanCommerce:(state)=>{
                 state.commerces={}
+            }
+        },
+        setCommerceDetail:{
+            reducer:(state,action)=>{
+                state.commerceDetail=action.payload
+            },
+            prepare:(info)=>{
+                return{payload:info}
             }
         }
     },
@@ -71,8 +92,22 @@ const noAuthSlice = createSlice({
             state.categorizedCommerces = {}
             state.loading = true;
         },
+        [getDetailCommerce.fulfilled]: (state, {payload}) => {
+            console.log(payload)
+            state.commerceDetail = payload;
+            state.loading = false;
+        },
+        [getDetailCommerce.rejected]: (state, {payload}) => {
+            state.loading = false;
+            state.error = payload;
+        },
+        [getDetailCommerce.pending]: (state, {payload}) => {
+            state.commerceDetail={}
+            state.loading = true;
+
+        },
     }
 })
 
-export const {cleanCommerces} = noAuthSlice.actions
+export const {cleanCommerces,setCommerceDetail} = noAuthSlice.actions
 export default noAuthSlice.reducer

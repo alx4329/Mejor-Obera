@@ -1,8 +1,17 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { setCommerceDetail } from '../../redux/reducer/noAuth'
 import './CommerceCard.css'
 const CommerceCard = ({info}) => {
+    const navigate=useNavigate()
+    const dispatch = useDispatch()
+    const goToDetail=(info)=>{
+        dispatch(setCommerceDetail(info))
+        navigate(`/comercio/${info._id}`)
+    }
     return(
-        <div className='card-container' >
+        <div onClick={()=>goToDetail(info)} className='card-container' >
             <div className='card-picture'>
             {
                 info.imageUrl?(

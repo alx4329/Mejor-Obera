@@ -1,0 +1,11 @@
+.detail-redes{
+    display: flex;
+    width: 10rem;
+    justify-content: flex-start;
+}
+.detail-icon{
+    margin-right: 1rem;
+}
+.commerce-addres{
+    margin-bottom: 1rem;
+}

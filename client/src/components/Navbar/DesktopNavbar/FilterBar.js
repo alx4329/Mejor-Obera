@@ -12,7 +12,7 @@ const FilterBar=({res}) =>{
     const categories = useSelector(state=>state.categories.categories)
 
     React.useEffect(()=>{
-        dispatch(getCategories())
+        if(categories.length===0) dispatch(getCategories())
     },[])
     
     
@@ -25,8 +25,8 @@ const FilterBar=({res}) =>{
                 categories && categories.map((cat,i)=>{
                     console.log(cat.tag)
                     return (
-                        <div className="category-container" >
-                            <img className="category-image" key={cat._id} name={cat._id}  onClick={()=>goToCategory(cat.shortening)} src={`/categories/${cat.identifier}.svg`} alt={cat.nombre} title={cat.nombre}/>
+                        <div key={cat._id} className="category-container" >
+                            <img className="category-image"  name={cat._id}  onClick={()=>goToCategory(cat.shortening)} src={`/categories/${cat.identifier}.svg`} alt={cat.nombre} title={cat.nombre}/>
                             <div className="category-tag" >{cat.tag}</div>
                         </div>
                         

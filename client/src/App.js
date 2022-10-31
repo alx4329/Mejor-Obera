@@ -7,6 +7,7 @@ import Login from './containers/Login/Login';
 import LoggedCommerce from './containers/LoggedCommerce/LoggedCommerce';
 import Home from './containers/Home/Home';
 import CategoryList from './containers/CategoryList/CategoryList';
+import CommerceDetail from './containers/CommerceDetail/CommerceDetail';
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
         
         <Route path='/home' element={<Home/>} />
         <Route path='/:id' element={<CategoryList/>} />
+        <Route path='/comercio/:id' element={<CommerceDetail/>} />
 
       </Routes>
     </Router>

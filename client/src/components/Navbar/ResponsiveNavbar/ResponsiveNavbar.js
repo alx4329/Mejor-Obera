@@ -14,7 +14,7 @@ const ResponsiveNavbar = () =>{
     return(
         <div className='res-navbar-container' >
             <div className='res-upper-header-nav' >
-                <div>4,5 y 6 de Noviembre • Aprovechá las ofertas</div>
+                <div>3, 4, 5 y 6 de Noviembre • Aprovechá las ofertas</div>
             </div>
             <div className='res-nav-middle-container' >
                 <NavSponsors res={true}/>

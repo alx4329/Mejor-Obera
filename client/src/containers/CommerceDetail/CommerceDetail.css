@@ -1,0 +1,49 @@
+.green-background-detail{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #D9E021;
+    width: 100%;
+    height: 100%;
+    /* padding-top: 1rem; */
+}
+.red-background-detail{
+    display: flex;
+    justify-content: center;
+    background-color: #ED1C24;
+    width: 100%;
+    /* font-family: 'Nunito', sans-serif; */
+    color: white;
+}
+.commerce-detail-left{
+    width: 40%;
+}
+.commerce-detail-right{
+    width:40%
+}
+.commerce-detail-nombre{
+    font-size: 2rem;
+    font-family: 'Nunito';
+    font-weight: 700;
+}
+.detail-title{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.detail-cat{
+    font-size: 0.8rem;
+    
+}
+.detail-logo-comercio{
+    border-radius: 1rem;
+    height: 6rem;
+}
+.commerce-detail-comercio{
+    /* margin-top: rem; */
+    font-family: 'Nunito';
+}

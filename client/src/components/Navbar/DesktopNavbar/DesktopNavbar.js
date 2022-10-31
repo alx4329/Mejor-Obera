@@ -21,7 +21,7 @@ const Desktopnavbar = () =>{
                 <div className='left-up-nav' >
                     <img onClick={goHome} src={LogoMO} className="logo-nav-mo" alt='Logo Mejor Obera'/>
                     <div className='nav-fecha-evento' >
-                        <p>4,5 y 6 DE<br/>
+                        <p>3, 4, 5 y 6 DE<br/>
                         NOVIEMBRE</p>
                     </div>
                     <Search/>

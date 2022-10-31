@@ -47,6 +47,9 @@
 .res-logo-nav-mo{
     height: 5rem;
 }
+.res-logo-nav-mo:hover{
+    cursor:pointer
+}
 .res-nav-fecha-evento{
     font-size: 0.8rem;
     color:#8CC63F;

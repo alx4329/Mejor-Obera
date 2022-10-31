@@ -29,9 +29,9 @@ const FilterSlider= ({slides,action})=> {
     >
         {
             slides.map((cat,i)=>{
-                return <SwiperSlide className="swiper-slide-nav" >
+                return <SwiperSlide className="swiper-slide-nav" key={cat._id} >
                 <div className="res-category-container" >
-                    <img className="category-container-nav" key={cat._id} name={cat._id}  onClick={()=>action(cat.shortening)} src={`/categories/${cat.identifier}.svg`} alt={cat.nombre} title={cat.nombre}/>
+                    <img className="category-container-nav"  name={cat._id}  onClick={()=>action(cat.shortening)} src={`/categories/${cat.identifier}.svg`} alt={cat.nombre} title={cat.nombre}/>
                     <div className="res-category-tag" >{cat.tag}</div>
                 </div>
                     </SwiperSlide>
