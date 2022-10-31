@@ -12,13 +12,13 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Landing/>} />
+        <Route path='/participar' element={<Landing/>} />
         <Route exact path='/login' element={<Login/>}/>
         <Route path='/private' element={<PrivateRoute/>} >
           <Route exact path='/private/comercio/:commerceId' element={[<LoggedCommerce/>]} />
         </Route>
         
-        <Route path='/home' element={<Home/>} />
+        <Route path='/' element={<Home/>} />
         <Route path='/:id' element={<CategoryList/>} />
         <Route path='/comercio/:id' element={<CommerceDetail/>} />
 
