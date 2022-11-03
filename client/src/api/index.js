@@ -16,8 +16,8 @@ const getConfig = async () => {
     console.log("🚀 ~ file: index.ts ~ line 17 ~ getConfig ~ token", token)
   
     const config = {
-      baseUrl: "http://localhost:4000",
-      // baseUrl: "https://mejorobera.herokuapp.com/",
+      baseUrl: "https://mejorobera.com.ar/:4001",
+      // baseUrl: "https://mejorobera.com/",
       headers: {
         
         
