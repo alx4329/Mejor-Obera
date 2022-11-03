@@ -8,7 +8,7 @@ const hostname = "127.0.0.1";
 
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/mejorobera.com.ar/privkey.pem','utf8')
 const certificate = fs.readFileSync('/etc/letsencrypt/live/mejorobera.com.ar/cert.pem','utf8')
-const ca = fs.readFileSync('/etc/letsencrypt/live/mejorobera.com.ar/chain/pem','utf8')
+const ca = fs.readFileSync('/etc/letsencrypt/live/mejorobera.com.ar/chain.pem','utf8')
 const credentials = {
     key:privateKey,
     cert:certificate,

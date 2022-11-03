@@ -23,7 +23,7 @@ const loginUser = async(req,res) => {
         const isValid = await bcrypt.compare(contraseña, user.contraseña);
         if(!isValid)  return res.status(401).json({status:"error",error:"Alguno de los datos no es válido"})
         const commerce = await commerceService.findCommerceByUser(user.id)
-        const token = jwt.sign({id:user._id},process.env.TOKEN_SECRET,{expiresIn:'31104000'})
+        const token = jwt.sign({id:user._id},"mejorSecretObera",{expiresIn:'31104000'})
         return res.json({
             token,
             user:{
