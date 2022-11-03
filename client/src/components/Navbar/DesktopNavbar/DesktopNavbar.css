@@ -11,9 +11,10 @@
 .upper-header-nav{
     display: flex;
     justify-content: center;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 0.9rem;
-    background-color: #d90000;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    background: rgb(237,28,36);
+    background: radial-gradient(circle, rgba(237,28,36,1) 0%, rgba(241,90,36,1) 100%);
     color: white
     ;
 }
@@ -44,6 +45,7 @@
 .nav-fecha-evento{
     font-size: 0.8rem;
     color:#8CC63F;
+    font-weight: 700;
 }
 .nav-red-icon{
     height: 2rem;

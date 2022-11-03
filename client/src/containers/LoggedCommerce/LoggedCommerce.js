@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import LoggedNavbar from '../../components/Commerce/LoggedNavbar';
 import { getCommerce } from '../../redux/reducer/commerceReducer';
 import FormInfo from '../../components/Commerce/formInfo';
+import Products from '../../components/Commerce/Products';
 
 const Commerce = ( ) => {
     const {commerceId} = useParams()
@@ -16,14 +17,13 @@ const Commerce = ( ) => {
 
     return(
         <div className='commerce-container' >
-            <LoggedNavbar/>
-            <div className='left-sidebar' >
-                <div onClick={()=>setOption("Usuario")} className='sidebar-option'>Información del Usuario</div>
-                <div onClick={()=>setOption("Comercio")} className='sidebar-option'>Información del Comercio</div>
-                <div onClick={()=>setOption("Productos")} className='sidebar-option'>Productos destacados</div>
-            </div>
+            <LoggedNavbar setOption={setOption} />
+            
             {
                 option ==="Comercio" && <FormInfo info={commerceInfo} />
+            }
+            {
+                option ==="Productos" && <Products id={commerceId} />
             }
         </div>
     )

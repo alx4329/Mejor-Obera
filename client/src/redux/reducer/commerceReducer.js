@@ -3,10 +3,10 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from '../../api/index'
 // let user =  "";
 // let token =  "";
-let user = localStorage.getItem("currentMejorOberaUser")
+let user = (localStorage.getItem("currentMejorOberaUser")&&localStorage.getItem("currentMejorOberaUser")!=="undefined")
   ? JSON.parse(localStorage.getItem("currentMejorOberaUser"))
   : "";
-let token = localStorage.getItem("token")
+let token = (localStorage.getItem("token")&&localStorage.getItem("token")!=="undefined")
   ? JSON.parse(localStorage.getItem("token"))
   : "";
 
@@ -17,11 +17,11 @@ const initialState = {
     token: token || null,
     commerce:{},
     error:null,
-    successAction:false
+    successAction:false,
+    products:[],
+    successDeleted:false
 }
-const headers = {
-    'Authorization': `Bearer ${token}`,
-}
+
 
 
 export const getCommerce = createAsyncThunk(
@@ -53,9 +53,22 @@ export const editCommerce = createAsyncThunk(
         }
     }
     )
+export const addProduct = createAsyncThunk(
+    'addProduct',
+    async ({formdata}, {rejectWithValue})=>{
+        try{
+            const commerce = await axios.requestData("post",`/products/create`,formdata)
+            console.log(commerce)
+            return commerce.data.data
+        }catch(e){
+            console.log(e)
+            return rejectWithValue({message:e.response.data.error||e.message})
+        }
+    }
+    )
 export const uploadProfileImage = createAsyncThunk(
     'uploadProfileImage',
-    async ({formdata,update}, {rejectWithValue})=>{
+    async ({formdata}, {rejectWithValue})=>{
         try{
             const commerce = await axios.requestData("post",`/commerce/uploadImage`,formdata)
             return commerce.data.data
@@ -65,7 +78,30 @@ export const uploadProfileImage = createAsyncThunk(
         }
     }
     )
-
+export const getProducts = createAsyncThunk(
+    'getProducts',
+    async({id},{rejectWithValue})=>{
+        try{
+            const products = await axios.request('get',`/products/all/${id}`)
+            return products.data.data
+        }catch(e){
+            console.log(e)
+            return rejectWithValue({message:e.response.data.error||e.message})
+        }
+    }
+)
+export const deleteProduct = createAsyncThunk(
+    'deleteProduct',
+    async({id},{rejectWithValue})=>{
+        try{
+            const products = await axios.request('post',`/products/delete/${id}`)
+            return "ok"
+        }catch(e){
+            console.log(e)
+            return rejectWithValue({message:e.response.data.error||e.message})
+        }
+    }
+)
 const userCommerceSlice = createSlice({
     name: 'userCommerce', 
     initialState: initialState,
@@ -74,7 +110,10 @@ const userCommerceSlice = createSlice({
             state.newUser = null
         },
         cleanSuccess: (state)=>{
-            state.success = false
+            state.successAction = false
+        },
+        cleanSuccessDeleted: (state)=>{
+            state.successDeleted = false
         },
         cleanError: (state)=>{
             state.error = null
@@ -82,7 +121,6 @@ const userCommerceSlice = createSlice({
     },
     extraReducers: {
         [getCommerce.fulfilled]: (state, {payload}) => {
-            
             state.commerce = payload;
             state.loading = false;
         },
@@ -93,10 +131,22 @@ const userCommerceSlice = createSlice({
         [getCommerce.pending]: (state, {payload}) => {
             state.commerce={}
             state.loading = true;
-
         },
+        [getProducts.fulfilled]: (state, {payload}) => {
+            state.products = payload;
+            state.loading = false;
+        },
+        [getProducts.rejected]: (state, {payload}) => {
+            state.loading = false;
+            state.error = payload;
+        },
+        [getProducts.pending]: (state, {payload}) => {
+            state.products={}
+            state.loading = true;
+        },
+
         [editCommerce.fulfilled]: (state, {payload}) => {
-            
+            state.successAction=true;
             state.commerce = payload;
             state.loading = false;
         },
@@ -111,7 +161,6 @@ const userCommerceSlice = createSlice({
 
         },
         [uploadProfileImage.fulfilled]: (state, {payload}) => {
-            
             state.successAction = true;
             state.loading = false;
         },
@@ -123,10 +172,32 @@ const userCommerceSlice = createSlice({
         [uploadProfileImage.pending]: (state, {payload}) => {
             
             state.loading = true;
-
+        },
+        [addProduct.fulfilled]: (state, {payload}) => {
+            state.successAction = true;
+            state.loading = false;
+        },
+        [addProduct.rejected]: (state, {payload}) => {
+            
+            state.loading = false;
+            state.error = payload;
+        },
+        [addProduct.pending]: (state, {payload}) => {
+            state.loading = true;
+        },
+        [deleteProduct.fulfilled]: (state, {payload}) => {
+            state.successDeleted = true;
+            state.loading = false;
+        },
+        [deleteProduct.rejected]: (state, {payload}) => {
+            state.loading = false;
+            state.error = payload;
+        },
+        [deleteProduct.pending]: (state, {payload}) => {
+            state.loading = true;
         },
 
     }
 })
-export const { cleanNewUser, cleanError } = userCommerceSlice.actions
+export const { cleanNewUser, cleanError,cleanCommerce,cleanSuccess,cleanSuccessDeleted } = userCommerceSlice.actions
 export default userCommerceSlice.reducer

@@ -2,12 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from '../../api/index'
 // let user =  "";
 // let token =  "";
-let user = localStorage.getItem("currentMejorOberaUser")
-  ? JSON.parse(localStorage.getItem("currentMejorOberaUser"))
-  : "";
-let token = localStorage.getItem("token")
-  ? JSON.parse(localStorage.getItem("token"))
-  : "";
+
 
 
 
@@ -15,9 +10,7 @@ const initialState = {
     categories:[],
     error:null
 }
-const headers = {
-    'Authorization': `Bearer ${token}`,
-}
+
 
 
 export const getCategories = createAsyncThunk(

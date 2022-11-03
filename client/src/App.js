@@ -8,6 +8,7 @@ import LoggedCommerce from './containers/LoggedCommerce/LoggedCommerce';
 import Home from './containers/Home/Home';
 import CategoryList from './containers/CategoryList/CategoryList';
 import CommerceDetail from './containers/CommerceDetail/CommerceDetail';
+import Offers from './containers/offers/Offers';
 function App() {
   return (
     <Router>
@@ -21,7 +22,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/:id' element={<CategoryList/>} />
         <Route path='/comercio/:id' element={<CommerceDetail/>} />
-
+        <Route path='/ofertas' element={<Offers/>}/>
       </Routes>
     </Router>
   );

@@ -1,0 +1,11 @@
+.my-swal{
+    z-index: 2000;
+}
+
+.add-Product-container{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}

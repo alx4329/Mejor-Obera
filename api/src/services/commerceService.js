@@ -10,7 +10,8 @@ const getCommerces = async()=>{
     return new Promise(async(resolve,reject)=>{
         try {
             const commerces = await Commerce.find({})
-            resolve(commerces)
+            const shuffledArray = commerces.sort((a, b) => 0.5 - Math.random());
+            resolve(shuffledArray)
         }catch(e){
             reject(e.message||e)
         }
@@ -20,6 +21,16 @@ const findCommerceById = async(id) =>{
     return new Promise(async(resolve,reject)=>{
         try{
             const found = await Commerce.findById(id)
+            resolve(found)
+        }catch(e){
+            reject(e)
+        }
+    })
+}
+const findCommerceByName = async(nombre) =>{
+    return new Promise(async(resolve,reject)=>{
+        try{
+            const found = await Commerce.find({nombre})
             resolve(found)
         }catch(e){
             reject(e)
@@ -95,7 +106,7 @@ const getCommercesByCategory = async(categoria) =>{
 const editCommerce = async(id,update) => {
     return new Promise(async(resolve,reject)=>{
         try{
-            const updatedCommerce = await Commerce.findOneAndUpdate({_id:id},update)
+            const updatedCommerce = await Commerce.findOneAndUpdate({_id:id},update,{new:true})
             resolve(updatedCommerce)
         }catch(e){
             reject(e.message||e)
@@ -173,5 +184,6 @@ module.exports = {
     editCommerce,
     uploadLogo,
     findCommerceByUser,
-    uploadFromLocal
+    uploadFromLocal,
+    findCommerceByName
 }

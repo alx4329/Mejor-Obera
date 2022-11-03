@@ -5,7 +5,10 @@ import axios from '../../api/index'
 const initialState={
     commerces:[],
     categorizedCommerces:{},
-    commerceDetail:{}
+    commerceDetail:{},
+    offers:[],
+    categorizedOffers:{},
+    productsDetail:[]
 }
 
 export const getCommerces = createAsyncThunk(
@@ -41,6 +44,47 @@ export const getDetailCommerce = createAsyncThunk(
     async ({commerceId}, {rejectWithValue})=>{
         try{
             const commerce = await axios.request("get", `/no/commerce/${commerceId}`)
+            
+            return commerce.data.data
+        }catch(e){
+            console.log(e)
+            return rejectWithValue({message:e.response.data.error||e.message})
+        }
+    }
+    )
+export const getProducts = createAsyncThunk(
+    'getProducts',
+    async (_, {rejectWithValue})=>{
+        try{
+            const commerce = await axios.request("get", `/no/products/all`)
+            
+            return commerce.data.data
+        }catch(e){
+            console.log(e)
+            return rejectWithValue({message:e.response.data.error||e.message})
+        }
+    }
+    )
+export const getProductsCommerce = createAsyncThunk(
+    'getProductsCommerce',
+    async ({id}, {rejectWithValue})=>{
+        try{
+            const commerce = await axios.request("get", `/no/products/commerce/${id}`)
+            
+            return commerce.data.data
+        }catch(e){
+            console.log(e)
+            return rejectWithValue({message:e.response.data.error||e.message})
+        }
+    }
+    )
+    export const getCategorizedProducts = createAsyncThunk(
+        'getCategorizedProducts',
+        async (_, {rejectWithValue})=>{
+            console.log("getting categorized products")
+            
+        try{
+            const commerce = await axios.request("get",`/no/products`)
             
             return commerce.data.data
         }catch(e){
@@ -105,6 +149,39 @@ const noAuthSlice = createSlice({
             state.commerceDetail={}
             state.loading = true;
 
+        },
+        [getProducts.fulfilled]: (state, {payload}) => {
+            state.offers = payload;
+            state.loading = false;
+        },
+        [getProducts.rejected]: (state, {payload}) => {
+            state.loading = false;
+            state.error = payload;
+        },
+        [getProducts.pending]: (state, {payload}) => {
+            state.loading = true;
+        },
+        [getCategorizedProducts.fulfilled]: (state, {payload}) => {
+            state.categorizedOffers = payload;
+            state.loading = false;
+        },
+        [getCategorizedProducts.rejected]: (state, {payload}) => {
+            state.loading = false;
+            state.error = payload;
+        },
+        [getCategorizedProducts.pending]: (state, {payload}) => {
+            state.loading = true;
+        },
+        [getProductsCommerce.fulfilled]: (state, {payload}) => {
+            state.productsDetail = payload;
+            state.loading = false;
+        },
+        [getProductsCommerce.rejected]: (state, {payload}) => {
+            state.productsDetail = false;
+            state.error = payload;
+        },
+        [getProductsCommerce.pending]: (state, {payload}) => {
+            state.loading = true;
         },
     }
 })

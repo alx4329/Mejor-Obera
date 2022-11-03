@@ -15,6 +15,8 @@ const userRoutes = require('./routes/userRoutes')
 const commerceRoutes = require('./routes/commerceRoutes')
 const categorieRoutes = require('./routes/categoryRoutes')
 const noAuthCommerceRoutes = require('./routes/noAuthCommerce')
+const productRoutes = require('./routes/productRoutes')
+const noAuthProducts=require('./routes/noAuthProductsRoutes')
 /* middleware */
 const authMiddleware = require('./middleware/auth')
 app.use(morgan("dev"));
@@ -26,12 +28,13 @@ app.use((req, res, next) => {
     next();
   });
 /*Routes*/
-app.use('/commerce',/* authMiddleware ,*/commerceRoutes)
-app.use('/categories',/* authMiddleware, */categorieRoutes)
+app.use('/commerce',authMiddleware ,commerceRoutes)
+app.use('/categories',categorieRoutes)
+app.use('/products',authMiddleware,productRoutes)
 /* no auth routes */
 app.use('/users',userRoutes)
 app.use('/no/commerce',noAuthCommerceRoutes)
-
+app.use('/no/products',noAuthProducts)
 app.use
 app.use(function (_, res) {
     res.status(404).json({ status: "inexistent route" });

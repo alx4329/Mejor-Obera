@@ -9,12 +9,12 @@ import './ResponsiveNavbar.css'
 const ResponsiveNavbar = () =>{
     const navigate = useNavigate()
     const goHome = () =>{
-        navigate('/home')
+        navigate('/')
     }
     return(
         <div className='res-navbar-container' >
             <div className='res-upper-header-nav' >
-                <div>3, 4, 5 y 6 de Noviembre • Aprovechá las ofertas</div>
+                <div>Aprovechá las ofertas a partir del 3 de Noviembre</div>
             </div>
             {/* <div className='res-nav-middle-container' >
                 <NavSponsors res={true}/>

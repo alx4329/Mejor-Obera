@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { cleanError, editCommerce } from '../../redux/reducer/commerceReducer';
+import { cleanError, cleanSuccess, editCommerce } from '../../redux/reducer/commerceReducer';
 import Swal from 'sweetalert2';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -66,7 +66,7 @@ const FormInfo =({info})=>{
         otro_url: "",
         imageUrl:""
     })
-    const [profileImage, setProfileImage] = React.useState("")
+    
     
     React.useEffect(()=>{
         if(info&&Object.keys(info).length>0){
@@ -85,7 +85,7 @@ const FormInfo =({info})=>{
                 otro_url:info.otro_url,
                 imageUrl:info.imageUrl
             })
-        setProfileImage(info.imageUrl||"")
+        
         }
     },[info])
     const error = useSelector(state => state.userCommerce.error);
@@ -99,9 +99,29 @@ const FormInfo =({info})=>{
             })
         }
     },[error])
-    const handleSubmit = (e) =>{
+    const success = useSelector(state => state.userCommerce.successAction)
+    React.useEffect(()=>{
+        if(success) Swal.fire({
+            title: 'Informacion editada',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+          }).then((value)=>{
+            value && dispatch(cleanSuccess())
+          })
+    
+    },[success])
+    const handleSubmit = (e)=>{
         e.preventDefault()
-        dispatch(editCommerce({commerceId:info._id,update:state}))
+        Swal.fire({
+            title: '¿Editar Informacion del comercio?',
+            text: 'Esta acción no se puede revertir.',
+            showCancelButton: true,
+            icon: 'warning',
+            confirmButtonText: 'Editar',
+            cancelButtonText:'Cancelar'
+          }).then((value)=>{
+            value.isConfirmed && dispatch(editCommerce({commerceId:info._id,update:state}))
+          })
     }
     const handleRelatives = (event) => {
         setState({
@@ -161,7 +181,7 @@ const FormInfo =({info})=>{
                         alignItems: 'center',
                     }}
                 >
-                    <Typography component="h1" variant="h2" fullWidth>
+                    <Typography component="h3" variant="h3" fullWidth>
                         {state.nombre} 
                     </Typography>
 

@@ -11,8 +11,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
     background-color: #d90000;
     color: white
     ;
@@ -53,6 +53,7 @@
 .res-nav-fecha-evento{
     font-size: 0.8rem;
     color:#8CC63F;
+    font-weight: 700;
 }
 .res-nav-red-icon{
     height: 2rem;

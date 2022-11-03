@@ -6,21 +6,18 @@ const productSchema = new Schema({
         type:String,
         required:true
     },
-    categoria:{
+    descripcion:{
+        type:String
+    },
+    categorias:[{
         type:String,
         required:true
-    },
-    precio:{
-        type:String,
-    },
-    descuento:{
-        type:Number,
-    },
+    }],
     idComercio:{
         type: String,
     },
-    cuitComercio:{type:String},
-    image:{type:String}
+    image:{type:String},
+    redirectsTo:{type:String}
 })
 
 module.exports = mongoose.model("Product", productSchema)

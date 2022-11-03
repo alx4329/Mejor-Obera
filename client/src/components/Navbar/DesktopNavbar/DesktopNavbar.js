@@ -10,12 +10,12 @@ import { useNavigate } from 'react-router-dom'
 const Desktopnavbar = () =>{
     const navigate = useNavigate()
     const goHome = () =>{
-        navigate('/home')
+        navigate('/')
     }
     return(
         <div className='navbar-container' >
             <div className='upper-header-nav' >
-                El MejorOberá comienza el 3 de Noviembre • Buscá los comercios adheridos y aprovechá las ofertas
+                Aprovechá las ofertas a partir del 3 de Noviembre
             </div>
             <div className='up-nav'>
                 <div className='left-up-nav' >
@@ -35,7 +35,7 @@ const Desktopnavbar = () =>{
                 <FilterBar/>
             </div>
             <div className='bottom-header-nav' >
-            A PARTIR DEL 3 DE NOVIEMBRE ENCONTRÁ LOS COMERCIOS ADHERIDOS • OFERTAS • DESCUENTOS • PROMOCIONES • MEJOR OBERÁ
+            ENCONTRÁ LOS COMERCIOS ADHERIDOS • OFERTAS • DESCUENTOS • PROMOCIONES • MEJOR OBERÁ
             </div>
         </div>
     )

@@ -6,7 +6,8 @@ import wp_logo from '../../assets/images/nav/whatsapp.svg'
 import './SocialCommerceNetwork.css'
 
 const SocialCommerceNetwork = ({details}) =>{
-    const regex = /[abcdefghijklmnñopqrstuvwyz]/ig
+    const regex = /[abcdefghijklmnñopqrstuvwyz-]/ig
+    const message = `Hola! vi tu comercio en *mejorobera.com.ar* y quisiera consultarte por...`
     return(
         <div className="detail-redes" >
             {details.fb_url && 
@@ -25,7 +26,7 @@ const SocialCommerceNetwork = ({details}) =>{
                 </a></div>
             }
             {details.whatsapp && 
-                <div><a href={`https://wa.me/+54${((details.whatsapp).replace(/\s/g,'').replace(regex,""))}`} target='_blank' rel="noreferrer nofollow" >
+                <div><a href={`https://wa.me/+54${((details.whatsapp).replace(/\s/g,'').replace(regex,""))}/?text=${message}`} target='_blank' rel="noreferrer nofollow" >
                     <img title={details.whatsapp} className='nav-red-icon detail-icon' src={wp_logo} alt="logo instagram comercio" / >
                 </a></div>
             }

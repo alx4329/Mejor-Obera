@@ -1,0 +1,58 @@
+.offers-container{
+    position: relative;
+    top:14rem;
+    display: flex;
+    justify-content: space-between;
+}
+.res-offers-container{
+    position:relative;
+    top:12rem;
+    flex-direction: column;
+}
+.Categories-Position{
+    position: fixed;
+}
+.offerListContainer{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+}
+.res-offerListContainer{
+    padding-top: 3rem;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.offer-card-container{
+    margin-bottom: 1rem;
+}
+.MuiCard-root{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+/* .offer-actions-container{
+    position: relative;
+    bottom: 0px;
+} */
+.offer-image{
+    height:200px;
+    object-fit: contain;
+}
+.res-offer-image{
+    height:150px;
+    object-fit: contain;
+}
+.offer-image-container{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+.res-offer-image-container{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}

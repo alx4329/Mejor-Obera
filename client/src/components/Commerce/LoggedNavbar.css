@@ -1,0 +1,19 @@
+.logged-navbar-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    background-color: #D9E021;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    
+    font-weight: 700;
+}
+.sidebar-option:hover{
+    color:white;
+    cursor: pointer;
+}
+.logged-nav-mo{
+    height: 4rem;
+}

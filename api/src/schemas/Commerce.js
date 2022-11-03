@@ -6,9 +6,6 @@ const commerceSchema = new Schema({
         type:String,
         required:true
     },
-    razonSocial:{
-        type:String
-    },
     CUIT:{
         type:String
     },

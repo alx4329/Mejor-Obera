@@ -1,14 +1,12 @@
 import React from 'react'
 import { Avatar, Box, Button, Input, Typography } from '@mui/material';
 import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRounded';
-import { getCommerce, uploadProfileImage } from '../../redux/reducer/commerceReducer';
+import { cleanSuccess, getCommerce, uploadProfileImage } from '../../redux/reducer/commerceReducer';
 import { useDispatch, useSelector } from 'react-redux';
-
+import Swal from 'sweetalert2';
 
 const ProfileImage = ({nombre,image,commerceId}) => {
-    console.log(nombre)
-    console.log(image)
-    console.log(commerceId)
+
     const success = useSelector(state=> state.userCommerce.successAction)
     const dispatch = useDispatch()
     const [addImage,setAddImage]=React.useState(false)
@@ -34,18 +32,8 @@ const ProfileImage = ({nombre,image,commerceId}) => {
         return color;
     }
 
-    function stringAvatar(name) {
-        return {
-            sx: {
-                bgcolor: stringToColor(name),
-                width: 150, height: 150 ,fontSize:80
-            },
-            children: `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`,
-        };
-    }
-    function uploadImage(){
 
-    }
+
     function handleChange(e){
         console.log(e.target.files[0])
         let formdata = new FormData();      
@@ -54,7 +42,16 @@ const ProfileImage = ({nombre,image,commerceId}) => {
         dispatch(uploadProfileImage({formdata}))
     }
     React.useEffect(()=>{
-        if(success) dispatch(getCommerce({commerceId}))
+        if(success) {
+            dispatch(getCommerce({commerceId}))
+            Swal.fire({
+                title: 'Imagen Agregada',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            }).then((value)=>{
+                value && dispatch(cleanSuccess())
+            })
+        }
         setAddImage(false)
     },[success])
     React.useEffect(()=>{
@@ -88,13 +85,7 @@ const ProfileImage = ({nombre,image,commerceId}) => {
                             
                             >
                         </Input>
-                        <Button
-                                variant="text"
-                                component="label"
-                                onClick={uploadImage}
-                            >
-                            <AddCircleOutlineRoundedIcon/>
-                        </Button>
+                        
                             
                 </Box>
             )

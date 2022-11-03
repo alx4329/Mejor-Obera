@@ -10,6 +10,7 @@ import home_banner_desktop from '../../assets/home_banners/MO_banner_escritorio.
 import home_banner_mobile from '../../assets/home_banners/MO_banner_móvil.jpg'
 
 import './Home.css'
+import Auspician from '../../components/Home/Auspician'
 const Home = () =>{
     const windowSize = useWindowSize()
     return (
@@ -26,6 +27,7 @@ const Home = () =>{
                 <div className='red-background' >
                 <AddedCommerces/>
                 </div>
+            <Auspician/>
             <SponsorsHome/>
             <Footer/>
             </div>

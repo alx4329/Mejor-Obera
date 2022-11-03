@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import mapa from '../../../assets/images/nav/MAPA.svg'
+import mapa from '../../../assets/images/nav/mejorobera_mapa.svg'
+import ofertas from '../../../assets/images/nav/mejorobera_ofertas.svg'
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -13,7 +14,10 @@ import { Autoplay, Pagination } from "swiper";
 import { useNavigate } from "react-router-dom";
 
 const FilterSlider= ({slides,action,number})=> {
-    
+    const navigate = useNavigate()
+    const goToOffers = () => {
+        navigate('/ofertas')
+    }
   return (
     <>
     <div className="map-icon" >
@@ -32,7 +36,7 @@ const FilterSlider= ({slides,action,number})=> {
         modules={[Pagination, Autoplay]}
         className="mySwiper-nav"
         autoplay={{
-            delay: 2500,
+            delay: 5000,
             disableOnInteraction: true,
             }}
     >
@@ -40,7 +44,7 @@ const FilterSlider= ({slides,action,number})=> {
         {
             slides.map((cat,i)=>{
                 return <SwiperSlide className="swiper-slide-nav" key={cat._id} >
-                <div className="res-category-container" >
+                <div className="res-category-container"  >
                     <img className="category-container-nav"  name={cat._id}  onClick={()=>action(cat.shortening)} src={`/categories/${cat.identifier}.svg`} alt={cat.nombre} title={cat.nombre}/>
                     <div className="res-category-tag" >{cat.tag}</div>
                 </div>
@@ -49,7 +53,10 @@ const FilterSlider= ({slides,action,number})=> {
         }
 
         </Swiper>
-    
+        <div onClick={goToOffers} className="map-icon" >
+            <img className="category-container-nav" src={ofertas} alt={"mapa de comercios"} title={"Mapa de Comercios"}/>
+            <div className="res-category-tag" >Ofertas  </div>            
+        </div>
     </>
     );
 }

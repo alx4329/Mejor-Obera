@@ -85,7 +85,7 @@ const editCommerce = async(req,res)=>{
         const {id} = req.params
         const {update} = req.body
         const updated = await commerceService.editCommerce(id,update)
-        res.json({status:"ok"})
+        res.json({status:"ok",data:updated})
     }catch(e){
         res.status(500).json({status:"error",error:e.message||e})
     }   

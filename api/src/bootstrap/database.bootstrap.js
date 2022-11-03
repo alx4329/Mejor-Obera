@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 const dbConfig = require("../config/db.config");
 const categoriesLoader = require("../utils/loaders/categoriesLoaders");
+const productsLoader = require("../utils/loaders/productsLoaders");
 const usersLoader = require("../utils/loaders/usersLoader");
 
 const HOSTS_RX =
@@ -13,9 +14,13 @@ const getConnectionString = async () => {
   const dbHost = process.env.DATABASE_HOST;
   const dbName = process.env.DB_NAME;
   //   TODO: alternative of setting up env variables through env.yaml or .env
-//   connectionString = `mongodb+srv://${dbUser}:${dbPassword}@${dbHost}/${dbName}?retryWrites=true&w=majority`;
+
+  //PRODUCTION:
 connectionString= `mongodb+srv://${dbUser}:${dbPassword}@cluster0.jiqpry6.mongodb.net/?retryWrites=true&w=majority`
   return connectionString;
+
+// connectionString= `mongodb+srv://${dbUser}:${dbPassword}@cluster0.4sbatvr.mongodb.net/?retryWrites=true&w=majority`
+//   return connectionString;
 };
 
 const dbMongoose = () => {
@@ -42,6 +47,7 @@ const dbMongoose = () => {
           console.log("Connection Database successful");
           // categoriesLoader()
           // usersLoader()
+          productsLoader()
           resolve("Connection Database successful");
         })
         .catch((err) => {

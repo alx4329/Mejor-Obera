@@ -1,8 +1,26 @@
+const sharp = require('sharp')
+const cloudinary = require("cloudinary").v2;
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 const Product = require("../schemas/Products")
 const getProducts = async()=>{
     return new Promise(async(resolve,reject)=>{
         try {
             const products = await Product.find({})
+            const shuffledArray = products.sort((a, b) => 0.5 - Math.random());
+            resolve(shuffledArray)
+        }catch(e){
+            reject(e.message||e)
+        }
+    })
+}
+const getProductsByCommerce = async(id)=>{
+    return new Promise(async(resolve,reject)=>{
+        try {
+            const products = await Product.find({idComercio:id})
             resolve(products)
         }catch(e){
             reject(e.message||e)
@@ -30,13 +48,14 @@ const imageLocation = async (image) => {
         return newLocation
     } else return image.tempFilePath
 }
-const uploadProductImage = async(image) =>{
+const uploadProductImage = async() =>{
+    console.log("IMAGEN",image)
     return new Promise(async(resolve,reject)=>{
         try{
             const location = await imageLocation(image)
             await cloudinary.uploader.upload(
                 location,
-                {folder:"profilePictures"},
+                {folder:"products"},
                 async (err,result) => {
                     if (err) {
                         reject("Error occurred while uploading file");
@@ -52,22 +71,73 @@ const uploadProductImage = async(image) =>{
         }
     })
 }
-const createProduct = async(nombre,categoria,precio,descuento,idComercio,cuitComercio,image) => {
+const uploadFromLocal = async(path) =>{
+    // console.log(image)
+    return new Promise(async(resolve,reject)=>{
+        try{
+            // const location = await imageLocation(image)
+            // console.log(location)
+            await cloudinary.uploader.upload(
+                path,
+                {folder:"products"},
+                async (err,result) => {
+                    if (err) {
+                        reject("Error occurred while uploading file");
+                    } else {
+                        //get saved image url
+                        imageUrl = result.secure_url;
+                        resolve(imageUrl)
+                        }
+                    }
+            )
+        }catch(e){
+            reject(e.message||e)
+        }
+    })
+}
+const createProduct = async(nombre,descripcion,idComercio,categoria,image,link) => {
     return new Promise (async(resolve,reject)=>{
         try{
                 const uploaded = await uploadProductImage(image)
+                console.log(uploaded)
                 const newProduct = new Product({
                     nombre,
-                    categoria,
-                    precio,
-                    descuento,
+                    descripcion,
+                    categorias:[categoria],
                     idComercio,
-                    cuitComercio,
                     image:uploaded
                 })
                 newProduct.save(function(err,obj){
                     if(err) {
-                        console.log(err)
+                        console.log("ERROR CREATING ON DB",err)
+                        reject(err)
+                    } else{
+                        resolve("Producto agregado"+obj.nombre)
+                    }
+                })
+            
+        }catch(e){
+            reject(e.message||e)
+        }
+    })
+}
+const createCategoriesProduct = async(nombre,descripcion,idComercio,categorias,image,link) => {
+    console.log(nombre,descripcion,idComercio,categorias,image)
+    return new Promise (async(resolve,reject)=>{
+        try{
+                const uploaded = await uploadFromLocal(image)
+                console.log(uploaded)
+                const newProduct = new Product({
+                    nombre,
+                    descripcion,
+                    categorias,
+                    idComercio,
+                    image:uploaded,
+                    redirectsTo:link
+                })
+                newProduct.save(function(err,obj){
+                    if(err) {
+                        console.log("ERROR CREATING ON DB",err)
                         reject(err)
                     } else{
                         resolve("Producto agregado"+obj.nombre)
@@ -120,5 +190,7 @@ module.exports = {
     getProducts,
     getProductsByCategory,
     deleteProduct,
-    editProduct
+    editProduct,
+    getProductsByCommerce,
+    createCategoriesProduct
 }

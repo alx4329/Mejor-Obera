@@ -3,10 +3,10 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from '../../api/index'
 // let user =  "";
 // let token =  "";
-let user = localStorage.getItem("currentMejorOberaUser")
+let user = (localStorage.getItem("currentMejorOberaUser")&&localStorage.getItem("currentMejorOberaUser")!=="undefined")
   ? JSON.parse(localStorage.getItem("currentMejorOberaUser"))
   : "";
-let token = localStorage.getItem("token")
+let token = (localStorage.getItem("token")&&localStorage.getItem("token")!=="undefined")
   ? JSON.parse(localStorage.getItem("token"))
   : "";
 
