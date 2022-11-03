@@ -48,7 +48,7 @@ const imageLocation = async (image) => {
         return newLocation
     } else return image.tempFilePath
 }
-const uploadProductImage = async() =>{
+const uploadProductImage = async(image) =>{
     console.log("IMAGEN",image)
     return new Promise(async(resolve,reject)=>{
         try{
@@ -97,6 +97,7 @@ const uploadFromLocal = async(path) =>{
 }
 const createProduct = async(nombre,descripcion,idComercio,categoria,image,link) => {
     return new Promise (async(resolve,reject)=>{
+        console.log("on the service",image)
         try{
                 const uploaded = await uploadProductImage(image)
                 console.log(uploaded)

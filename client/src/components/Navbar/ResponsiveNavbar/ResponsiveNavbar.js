@@ -6,6 +6,7 @@ import FilterBar from '../DesktopNavbar/FilterBar'
 import SocialNetwork from '../../SocialNetwork'
 import { useNavigate } from 'react-router-dom'
 import './ResponsiveNavbar.css'
+import SearchBar from '../DesktopNavbar/SearchBar'
 const ResponsiveNavbar = () =>{
     const navigate = useNavigate()
     const goHome = () =>{
@@ -21,7 +22,7 @@ const ResponsiveNavbar = () =>{
             </div> */}
             <div className='res-up-nav' >
                 <img onClick={goHome} src={LogoMO} className="res-logo-nav-mo" alt='Logo Mejor Obera'/>
-                <Search res={true} />
+                <SearchBar res={true} />
                 <div className='res-navbar-social-container' >
                     <SocialNetwork component={"res-navbar"} />
 

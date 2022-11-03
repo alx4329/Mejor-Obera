@@ -27,6 +27,7 @@ const Offers =()=>{
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[offers])
     React.useEffect(()=>{
+        console.log(category)
         if(category==="all") setList(offers)
         else setList(categorizedOffers[category].products)
     // eslint-disable-next-line react-hooks/exhaustive-deps

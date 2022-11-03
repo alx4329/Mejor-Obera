@@ -16,11 +16,11 @@ const getConnectionString = async () => {
   //   TODO: alternative of setting up env variables through env.yaml or .env
 
   //PRODUCTION:
-connectionString= `mongodb+srv://${dbUser}:${dbPassword}@cluster0.jiqpry6.mongodb.net/?retryWrites=true&w=majority`
-  return connectionString;
-
-// connectionString= `mongodb+srv://${dbUser}:${dbPassword}@cluster0.4sbatvr.mongodb.net/?retryWrites=true&w=majority`
+// connectionString= `mongodb+srv://${dbUser}:${dbPassword}@cluster0.jiqpry6.mongodb.net/?retryWrites=true&w=majority`
 //   return connectionString;
+
+connectionString= `mongodb+srv://${dbUser}:${dbPassword}@cluster0.4sbatvr.mongodb.net/?retryWrites=true&w=majority`
+  return connectionString;
 };
 
 const dbMongoose = () => {
@@ -47,7 +47,7 @@ const dbMongoose = () => {
           console.log("Connection Database successful");
           // categoriesLoader()
           // usersLoader()
-          productsLoader()
+          // productsLoader()
           resolve("Connection Database successful");
         })
         .catch((err) => {

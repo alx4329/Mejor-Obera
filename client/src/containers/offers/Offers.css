@@ -6,11 +6,16 @@
 }
 .res-offers-container{
     position:relative;
-    top:12rem;
+    top:10rem;
     flex-direction: column;
 }
-.Categories-Position{
+.res-sidebar-container{
+    top:11rem;
     position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
+    height: 3rem;
 }
 .offerListContainer{
     width: 70%;

@@ -27,7 +27,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy-production": "react-scripts build && scp -r ./build/* root@66.97.46.196:/var/www/mejorobera.com/html"
   },
   "eslintConfig": {
     "extends": [
