@@ -6,6 +6,7 @@ import './DesktopNavbar.css'
 import FilterBar from './FilterBar'
 import SocialNetwork from '../../SocialNetwork'
 import { useNavigate } from 'react-router-dom'
+import SearchBar from './SearchBar'
 
 const Desktopnavbar = () =>{
     const navigate = useNavigate()
@@ -24,7 +25,7 @@ const Desktopnavbar = () =>{
                         <p>3, 4, 5 y 6 DE<br/>
                         NOVIEMBRE</p>
                     </div>
-                    <Search/>
+                    <SearchBar/>
                     <div className='nav-redes-container' >
                         <SocialNetwork component={"navbar"} />
                     </div>

@@ -13,7 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
-const ResSidebar = () =>{
+const ResSidebar = ({setCategory}) =>{
     const categories = useSelector(state=>state.categories.categories)
 
     const [state, setState] = React.useState({
@@ -43,8 +43,8 @@ const ResSidebar = () =>{
         >
           <List>
             {categories.map((item, index) => (
-              <ListItem key={item.nombre} disablePadding>
-                <ListItemButton>
+              <ListItem  key={item.nombre} disablePadding>
+                <ListItemButton onClick={()=>{setCategory(item.shortening)}} >
                   
                   <ListItemText primary={item.nombre} />
                 </ListItemButton>
@@ -56,7 +56,7 @@ const ResSidebar = () =>{
       );
     
       return (
-        <div className='sidebar-container'>
+        <div className='res-sidebar-container'>
           {(['categorias'] ).map((anchor) => (
             <React.Fragment key={anchor}>
               <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>

@@ -40,10 +40,12 @@ const getProductsByCommerce = async (req,res) => {
 }
 
 const createProduct = async (req,res) => {
+
     try{
         const {nombre,descripcion,categoria,commerceId} = req.body
         const image = req?.files?.image;
-        if(!nombre || !descripcion || !categoria || !commerceId) res.status(400).json({status:"error",error:"Enviar todos los campos"})
+        console.log(image)
+        if(!nombre || !descripcion || !categoria || !commerceId || !image ) res.status(400).json({status:"error",error:"Enviar todos los campos"})
         const newProduct = await productService.createProduct(nombre,descripcion,commerceId,categoria,image)
         if(newProduct) res.json({status:"ok"})
     }catch(e){

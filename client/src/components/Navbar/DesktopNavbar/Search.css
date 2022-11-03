@@ -3,7 +3,8 @@
     border-radius: 1.25rem;
     height: 1.5rem;
     box-sizing: border-box;
-    width: 30%;
+    width: 100%;
+    
 }
 .res-input-searchbar{
     border: 1px solid #8CC63F;
@@ -12,4 +13,33 @@
     box-sizing: border-box;
     width: 50%;
 }
+.dropdown{
+    /* display: block; */
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top:3rem;
+    z-index: 2;
+}
+.dropbtn{
+    background-color: rgb(255, 255, 255,0.8);
+    width: 15rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+.dropbtn:hover{
+    background-color: #8CC63F;
+    color:white;
+    cursor:pointer
+}
+.dropbtn:active{
+    background-color: #547924;
 
+}
+.search-nombre{
+    font-weight: 700;
+
+}
+.search-direccion{
+    font-size: 0.8rem;
+}
