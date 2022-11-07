@@ -49,13 +49,15 @@ function Row(props) {
     }
     const successDeleted = useSelector(state=>state.userCommerce.successDeleted)
     React.useEffect(()=>{
+      console.log(successDeleted)
         if(successDeleted){
+            console.log("adentro")
             Swal.fire({
                 title: 'Oferta Eliminada',
                 icon: 'success',
                 confirmButtonText: 'Ok'
                 }).then((value)=>{                
-                value && cleanSuccessDeleted();
+                value && dispatch(cleanSuccessDeleted());
                 })
         }
     },[successDeleted])
