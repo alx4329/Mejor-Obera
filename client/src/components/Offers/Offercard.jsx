@@ -59,8 +59,8 @@ export default function OfferCard({offer,detailCommerce}) {
         </Typography>
       </CardContent>
       <CardActions className='offer-actions-container' >
-      {offer.redirectsTo && 
-                <div><a href={`https://wa.me/+54${((offer.redirectsTo).replace(/\s/g,'').replace(regex,""))}/?text=${message}`} target='_blank' rel="noreferrer nofollow" >
+      {(offer.redirectsTo || detail?.whatsapp) && 
+                <div><a href={`https://wa.me/+54${((offer.redirectsTo||detail?.whatsapp).replace(/\s/g,'').replace(regex,""))}/?text=${message}`} target='_blank' rel="noreferrer nofollow" >
                     <Button size="small">Consultar</Button>
                 </a></div>
             }
