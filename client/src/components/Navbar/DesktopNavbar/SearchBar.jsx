@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setCommerceDetail } from '../../../redux/reducer/noAuth';
-export default function SearchBar() {
+export default function SearchBar({res}) {
     const dispatch=useDispatch()
     const navigate=useNavigate()
     const [searchQuery, setSearchQuery] = useState("");
@@ -33,10 +33,11 @@ export default function SearchBar() {
           padding: 20
         }}
       >
-        <Search searchQuery={searchQuery} setQuery={setSearchQuery} />
+        <Search searchQuery={searchQuery} setQuery={setSearchQuery} res={res} />
        
-                <div className="dropdown" >
+                <div className={res?"res-dropdown":"dropdown"} >
             {
+            
             searchQuery.length>2 && dataFiltered.map((d) => {
                     return(
                     <div onClick={()=>goTo(d)}  className={"dropbtn"}>  
@@ -46,7 +47,12 @@ export default function SearchBar() {
                         )
                     })
             }
-        
+            {
+                searchQuery.length>2 && dataFiltered.length===0 && <div   className={"dropbtn"}>
+                <div className='search-nombre' >No se encontraron coincidencias</div>
+                </div>
+                
+            }
         </div>
       </div>
     );
