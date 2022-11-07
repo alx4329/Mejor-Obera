@@ -258,7 +258,7 @@ formData =[
   {
     "nombreComercio": "Big Burger",
     "CUIT": 20296762599,
-    "email": "marcelopalomo42@gmail.com",
+    "email": "bigburger@bigburger.com",
     "direccionComercio": "Av. Libertad 624, Oberá, Misiones",
     "categorias": ["Gastronomía, Heladería, Bar, Restaurante"],
     "descripcion": "Venta de hamburguesas, papas, panchos y bebidas.",
@@ -1250,7 +1250,7 @@ formData =[
   {
     "nombreComercio": "La Cándida Apartamentos",
     "CUIT": 27186046256,
-    "email": "marianobenjaminzalazar@gmail.com",
+    "email": "lacandidaapartamentos@lacandidapartamentos.com",
     "direccionComercio": "Salto Zacarias 45, Oberá, Misiones",
     "categorias": ["Hotelería y Turismo"],
     "descripcion": "Alquiler de apartamentos amueblados por día.",
@@ -1346,7 +1346,7 @@ formData =[
   {
     "nombreComercio": "MAAN Hombres",
     "CUIT": 20334568920,
-    "email": "alanjostalan@gmail.com",
+    "email": "maanhombres@maanhombres.com",
     "direccionComercio": "Gdor. Barreyro 918, Oberá, Misiones",
     "categorias": ["Indumentaria, Calzado, Lencería, Boutique"],
     "descripcion": "Venta de indumentaria masculina.",
@@ -1842,7 +1842,7 @@ formData =[
   {
     "nombreComercio": "Pipa",
     "CUIT": 27186046256,
-    "email": "marianobenjaminzalazar@gmai.com",
+    "email": "pipa@pipa.com",
     "direccionComercio": "Salta 62, Oberá, Misiones",
     "categorias": ["Indumentaria, Calzado, Lencería, Boutique"],
     "descripcion": "Venta de indumentaria Urbana SIN GÉNERO. Envíos a todo el país.",
@@ -2098,7 +2098,7 @@ formData =[
   {
     "nombreComercio": "Sil-Mar II",
     "CUIT": 30714845574,
-    "email": "aviasrl04@gmail.com",
+    "email": "silmardos@silmardos.com",
     "direccionComercio": "Av. Libertad Y 9 De Julio, Oberá, Misiones",
     "categorias": ["Indumentaria, Calzado, Lencería, Boutique"],
     "descripcion": "Tienda de ropa para toda la familia.",
@@ -2114,7 +2114,7 @@ formData =[
   {
     "nombreComercio": "Sil-Mar Liquidación",
     "CUIT": 30714845574,
-    "email": "aviasrl04@gmail.com",
+    "email": "silmarliquidacion@silmarliquidacion.com",
     "direccionComercio": "Av. José Ingenieros 169, Oberá, Misiones",
     "categorias": ["Indumentaria, Calzado, Lencería, Boutique", "Bebés y Niños"],
     "descripcion": "Tienda de ropa para toda la familia.",
@@ -2290,7 +2290,7 @@ formData =[
   {
     "nombreComercio": "Valkymia Oberá",
     "CUIT": 27381876352,
-    "email": "saulbonifato@gmail.com",
+    "email": "valkymia@valkymia.com",
     "direccionComercio": "Av. 9 De Julio 717, Oberá, Misiones",
     "categorias": ["Indumentaria, Calzado, Lencería, Boutique"],
     "descripcion": "Franquicia. Boutique Indumentaria Masculino. Urbano. Joven.",
@@ -2398,6 +2398,22 @@ formData =[
     "ig_url": "https://www.instagram.com/diniyciasrl/?hl=es",
     "otro_url": "",
     "auspicia": true
+  },
+  {
+    "nombreComercio": "Automotores Los Suizos",
+    "CUIT": "20204917915",
+    "email": "automotoreslossuizos@gmail.com",
+    "direccionComercio": "Apóstoles Norte 611, Oberá, Misiones",
+    "categorias": ["Automotriz, Motocicletas, Bicicletas"],
+    "descripcion": "Venta de automotores",
+    "telefonoComercio": "3755492505",
+    "whatsappCommercio": "3755492505",
+    "emailComercio": "automotoreslossuizos@gmail.com",
+    "web_url": "https://wa.me/c/5493755492505",
+    "fb_url": "https://www.facebook.com/profile.php?id=100063653136579",
+    "ig_url": "https://www.instagram.com/automotoreslossuizos/",
+    "otro_url": "",
+    "auspicia": false
   }
 ]
   module.exports = formData
