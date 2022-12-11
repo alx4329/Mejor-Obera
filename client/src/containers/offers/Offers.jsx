@@ -16,10 +16,12 @@ const Offers =()=>{
     const categorizedOffers = useSelector(state=>state.noAuth.categorizedOffers)
     const dispatch = useDispatch()
     React.useEffect(()=>{
-        dispatch(getProducts())
-        dispatch(getCategorizedProducts())
+        if(offers.length===0)dispatch(getProducts())
+        if(Object.keys(categorizedOffers).length===0) dispatch(getCategorizedProducts())
         if(commerces.length===0) dispatch(getCommerces())
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     },[])
+    
     const [list,setList] = React.useState([])
     const [category, setCategory] = React.useState("all")
     React.useEffect(()=>{

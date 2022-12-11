@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Footer from '../../components/Footer/Footer'
 import AddedCommerces from '../../components/Home/AddedCommerces'
 import SponsorsHome from '../../components/Home/SponsorsHome'
@@ -13,6 +13,9 @@ import './Home.css'
 import Auspician from '../../components/Home/Auspician'
 const Home = () =>{
     const windowSize = useWindowSize()
+    useEffect(() => {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+      }, []);
     return (
         <>
             <Navbar/>
