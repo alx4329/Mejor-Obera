@@ -8,7 +8,8 @@ const initialState={
     commerceDetail:{},
     offers:[],
     categorizedOffers:{},
-    productsDetail:[]
+    productsDetail:[],
+    loading:false
 }
 
 export const getCommerces = createAsyncThunk(
