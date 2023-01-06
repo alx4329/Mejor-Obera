@@ -35,4 +35,5 @@
     object-fit: cover;
     height: 7rem;
     width: 7rem;
+    aspect-ratio: 1;
 }

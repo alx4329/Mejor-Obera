@@ -1,4 +1,5 @@
 .logo-login{
     width: 8rem;
     object-fit: contain;
+    aspect-ratio: 1;
 }

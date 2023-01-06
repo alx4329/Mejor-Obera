@@ -42,7 +42,7 @@ const Offers =()=>{
             {windowSize.innerWidth<720?<ResSidebar setCategory={setCategory}/>: <SideBar setCategory={setCategory}/>}
             {loading && <Loading/>}
             { !loading && list.length>0 ? <OfferList list={list}  /> : (
-                <div className='loading-container' >No se encontraron ofertas para esta catergoría</div>
+                <div className='loading-container' >No se encontraron ofertas para esta categoría</div>
             )}
             </div>
         </>

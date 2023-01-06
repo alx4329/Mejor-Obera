@@ -22,7 +22,6 @@ const Home = () =>{
             <div className={windowSize.innerWidth<720?"res-home-container": 'home-container'} >
                 <div className='green-background' >
                     <div className='home-slider' >
-                        {/* <Slider slides={windowSize.innerWidth>720? sliderImages.desktop:sliderImages.responsive} /> */}
                         <img className='home-banner' src={windowSize.innerWidth>720? home_banner_desktop:home_banner_mobile} alt='Banner' />
                     </div>
 
