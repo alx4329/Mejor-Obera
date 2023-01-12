@@ -14,7 +14,11 @@ const CategoryList = () =>{
     useEffect(()=>{
         if(Object.keys(reduxCommerces).length===0) dispatch(getCategorizedCommerces())
     },[])
+    useEffect(()=>{
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    },[id])
     const windowSize = useWindowSize()
+    
     return(
         <>
             <Navbar/>

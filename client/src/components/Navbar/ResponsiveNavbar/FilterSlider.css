@@ -29,6 +29,7 @@
   .category-container-nav{
     height: 3rem;
     width: 3rem;
+    aspect-ratio: 1;
     border: solid 1px #8CC63F;
     border-radius: 50%;
     object-fit: contain;

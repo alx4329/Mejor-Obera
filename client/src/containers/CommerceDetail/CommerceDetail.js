@@ -20,7 +20,9 @@ const CommerceDetail = () =>{
     useEffect(()=>{
         dispatch(getProductsCommerce({id}))
         if(Object.keys(details).length===0)dispatch(getDetailCommerce({commerceId:id}))
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     },[])
+    
     details?.categorias?.forEach((cat,i)=> categoriasHedear.length===0?categoriasHedear=cat:categoriasHedear= categoriasHedear +', '+ cat)
     
     return(

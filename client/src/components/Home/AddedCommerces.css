@@ -1,5 +1,6 @@
 .home-commerces-container{
     width: 80%;
+    min-height: 15rem;
     /* height: 40rem; */
     padding: 1vw;
     position: relative;
@@ -18,7 +19,8 @@
 .commerces-list{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    
 }
 @media (max-width:900px)  {
     .home-commerces-container{

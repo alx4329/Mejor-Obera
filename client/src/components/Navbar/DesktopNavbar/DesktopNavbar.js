@@ -1,7 +1,6 @@
 import React from 'react'
 import LogoMO from '../../../assets/images/mejorobera.png'
 import NavSponsors from './NavSponsors'
-import Search from './Search'
 import './DesktopNavbar.css'
 import FilterBar from './FilterBar'
 import SocialNetwork from '../../SocialNetwork'
